@@ -1,0 +1,33 @@
+body{
+    background-image: url(/assets/bf-red-landing.jpg);
+    background-size: cover;
+}
+.description{
+    height: 70vh;
+}
+
+.footer{
+    background-color: rgba(255, 255, 255, 0.1);
+    padding-bottom: 0;
+    margin-bottom: 0;
+    padding-top: 36px;
+}
+.bg-description{
+    color: black;
+    text-shadow:10px;
+    text-align: center;
+}
+.pt-6{
+    padding-top: 25vh;
+}
+.rollingmovies-text{
+    font-weight:700;
+}
+.footer, .socialm{
+    text-decoration: none;
+    color: black;
+}
+.socialm:hover{
+    color: white;
+    cursor: pointer;
+}
