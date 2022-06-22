@@ -1,0 +1,43 @@
+body{
+    background-image: url(/assets/bf-red-landing.jpg);
+    background-size: cover;
+}
+.description{
+    height: 39vh;
+}
+.footer{
+    background-color: rgba(60.78, 60.78, 60.78, 0.2);
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+    padding-top: 5px;
+}
+.pt-6{
+    /* padding-top: 30vh; */
+}
+.pt-7{
+    padding-top: 28vh;
+}
+.rollingmovies-text{
+    font-weight:700;
+    font-size: 40px;
+}
+.footer, .socialm{
+    text-decoration: none;
+    color: black;
+}
+.socialm:hover{
+    color: white;
+    cursor: pointer;
+}
+.navbar-color{
+    background-color: rgba(60.78, 60.78, 60.78, 0.2);
+}
+
+
+
+
+@media only screen and (min-width: 0px) and (max-width: 400px){
+    .bye-text{
+    color: transparent;
+    }
+}
