@@ -28,7 +28,7 @@ const register = (event) =>{
 
     localStorage.setItem('users',JSON.stringify(usersLS))
     }else{
-    console.log('todo mal');
+    console.log('not available');
     }
 
 } 

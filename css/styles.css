@@ -3,14 +3,14 @@ body{
     background-size: cover;
 }
 .description{
-    height: 70vh;
+    height: 78vh;
 }
 
 .footer{
-    background-color: rgba(255, 255, 255, 0.1);
-    padding-bottom: 0;
-    margin-bottom: 0;
-    padding-top: 36px;
+    background-color: rgba(60.78, 60.78, 60.78, 0.2);
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+    padding-top: 5px;
 }
 .bg-description{
     color: black;
@@ -30,4 +30,7 @@ body{
 .socialm:hover{
     color: white;
     cursor: pointer;
+}
+.navbar-color{
+    background-color: rgba(60.78, 60.78, 60.78, 0.2);
 }
