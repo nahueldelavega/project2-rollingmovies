@@ -1,4 +1,4 @@
-body{
+body {
   background-color: antiquewhite !important;
 }
 
@@ -101,4 +101,22 @@ body{
 .movie img {
   width: 100%;
   vertical-align: top;
+}
+
+@media screen and (max-width: 800px) {
+  .carouselContainer {
+  overflow: visible;
+  }
+
+  .carouselContainer .carousel{
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .indicators,
+  .leftArrow,
+  .rigthArrow{
+    display: none;
+  }
 }
