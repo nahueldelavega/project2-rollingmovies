@@ -1,0 +1,104 @@
+body{
+  background-color: antiquewhite !important;
+}
+
+.mainImage {
+  height: 35vh;
+  object-fit: cover;
+}
+
+.btn-play {
+  background-color: #2669cc;
+  padding: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+
+.btn-play:hover {
+  background-color: black;
+  color: white;
+  border: 1px solid white;
+}
+/** Contenedor de título y controles*/
+.containerTitleControls h3 {
+  color: white;
+  font-size: 30px;
+}
+
+.indicators button {
+  background: white;
+  height: 3px;
+  width: 10px;
+  cursor: pointer;
+  border: none;
+  margin-right: 2px;
+}
+
+.indicators button:hover,
+.indicators button.active {
+  background: red;
+}
+
+/** Contenedor principal y flechas */
+
+.container {
+  background-color: gray !important;
+}
+
+.recommendedMovie {
+  margin-bottom: 70px;
+}
+
+.leftArrow,
+.rigthArrow {
+  background: rgba(0, 0, 0, 0.3);
+  font-size: 40px;
+  height: 50%;
+  top: calc(50%-25%);
+  line-height: 50px;
+  z-index: 500;
+  transition: 0.2s ease all;
+}
+
+.leftArrow:hover,
+.rigthArrow:hover {
+  background: rgba(0, 0, 0, 0.9);
+}
+
+.leftArrow {
+  left: 0;
+}
+
+.rigthArrow {
+  right: 0;
+}
+
+/** Carousel */
+/* .recommendedMovie */
+.carouselContainer {
+  width: 100%;
+  padding: 20px 0;
+  overflow: hidden;
+  scroll-behavior: smooth;
+}
+
+.carouselContainer {
+}
+
+.movie {
+  min-width: 20%;
+  transition: 0.3s ease all;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+.movie.hover {
+  transform: scale(1.2);
+  transition: center;
+}
+
+.movie img {
+  width: 100%;
+  vertical-align: top;
+}
