@@ -1,9 +1,10 @@
 body {
-  background-color: antiquewhite !important;
+  background-image: url(/assets/bf-red-landing.jpg);
+  background-size: cover;
 }
 
 .mainImage {
-  height: 35vh;
+  height: 50vh;
   object-fit: cover;
 }
 
@@ -21,7 +22,55 @@ body {
   color: white;
   border: 1px solid white;
 }
-/** Contenedor de título y controles*/
+
+.carouselContainer{
+  width: 90%;
+  margin: 0px auto;
+}
+
+
+.movieImage{
+  width: 19%;
+  height: 250px;
+  object-fit: cover;
+}
+
+.movieImageMobile{
+  width: 80%;
+  height: 250px;
+  margin: 0px auto;
+  object-fit: cover;
+}
+
+.footer{
+  position: absolute;
+  bottom: 0;
+  background-color: rgba(60.78, 60.78, 60.78, 0.2);
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+  padding-top: 5px;
+}
+
+.footer, .socialm{
+  text-decoration: none;
+  color: black;
+}
+.socialm:hover{
+  color: white;
+  cursor: pointer;
+}
+.navbar-color{
+  background-color: rgba(60.78, 60.78, 60.78, 0.2);
+}
+
+@media screen and (max-width: 576px) {
+  .mainImage {
+    height: 35vh;
+    object-fit: cover;
+  }
+}
+
+/* * Contenedor de título y controles
 .containerTitleControls h3 {
   color: white;
   font-size: 30px;
@@ -41,7 +90,7 @@ body {
   background: red;
 }
 
-/** Contenedor principal y flechas */
+/* * Contenedor principal y flechas 
 
 .container {
   background-color: gray !important;
@@ -75,8 +124,8 @@ body {
   right: 0;
 }
 
-/** Carousel */
-/* .recommendedMovie */
+/* * Carousel 
+/* .recommendedMovie 
 .carouselContainer {
   width: 100%;
   padding: 20px 0;
@@ -120,3 +169,4 @@ body {
     display: none;
   }
 }
+*/
