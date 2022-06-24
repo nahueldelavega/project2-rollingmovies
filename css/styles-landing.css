@@ -6,8 +6,6 @@ body{
     height: 39vh;
 }
 .footer{
-    position: absolute;
-    bottom: 0;
     background-color: rgba(60.78, 60.78, 60.78, 0.2);
     padding-bottom: 0px;
     margin-bottom: 0px;

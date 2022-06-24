@@ -23,8 +23,10 @@ const register = (event) =>{
         console.log('no me hagas trampa');
     }else{
         usersLS.push(new User(usersLS.length+1,name,lastName,email,pass,false));
-        window.location.assign(window.location.origin + '/ecommerce/ecommerce.html')
+        window.location.assign(window.location.origin + '/project 2 - rollingmovies/homepage.html')
     }
+
+    //! VER DE REDIRIGIR EL BOTON DE REGISTRO A HOME PAGE
 
     localStorage.setItem('users',JSON.stringify(usersLS))
     }else{
