@@ -42,6 +42,12 @@ body {
   object-fit: cover;
 }
 
+.col-sm-2-4{
+  width: 19% !important;
+  height: 250px;
+  object-fit: cover;
+}
+
 .footer{
   position: absolute;
   bottom: 0;
@@ -65,7 +71,7 @@ body {
 
 @media screen and (max-width: 576px) {
   .mainImage {
-    height: 35vh;
+    height: 45vh;
     object-fit: cover;
   }
 }

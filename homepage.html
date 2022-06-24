@@ -4,7 +4,8 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>RollingMovies, tu plataforma de streaming favorita</title>
+    <title>RollingMovies, tu plataforma de streaming favorita</title>    
+    <link rel="shortcut icon" href="./assets/logo.png" type="image/x-icon">
     <link rel="stylesheet" href="css/stylesHomePage.css" type="text/css" />
     <!--* Agregado de Bootstrap -->
     <link
@@ -15,10 +16,11 @@
     />
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg bg-transparent sticky-top p-0">
-      <div class="container-fluid navbar-color">
+    <!--* Navbar-->
+    <nav class="navbar navbar-expand-lg bg-transparent position-static top-0 p-0">
+      <div class="container-fluid navbar-color p-1">
         <a class="navbar-brand" href="landing-page.html">
-          <div class="ps-5">
+          <div class="ps-1">
             <img
               src="./assets/logo.png"
               alt=""
@@ -61,42 +63,8 @@
         </div>
       </div>
     </nav>
-    <!-- <nav class="navbar fixed-top navbar-expand-lg bg-light">
-      <div class="container-fluid">
-        <a class="navbar-brand ms-1" href="#">Logo</a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div
-          class="collapse navbar-collapse justify-content-end"
-          id="navbarNav"
-        >
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link" href="#">Inicio</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Contacto</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link">Acerca de</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link">Login</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav> -->
-    <div class="card text-white mt-1">
+   <!--* Película/Serie destacada-->
+    <div class="card text-white mt-0">
       <img src="testImage.jpg" class="d-block w-100 mainImage" alt="..." />
       <div class="card-img-overlay d-flex align-items-start flex-column">
         <div class="my-auto overflow-auto">
@@ -110,11 +78,11 @@
       </div>
     </div>
 
+    <!--* Películas recomendadas-->
     <h3 class="carouselContainer mt-3 mb-1">Películas Recomendadas</h3>
-    <!--* Carousel dispositivos con gran resolucion -->
     <div
       id="recommendedCarousel"
-      class="carousel slide carouselContainer d-none d-sm-flex"
+      class="carousel slide carouselContainer d-sm-flex"
       data-bs-ride="true"
     >
       <div class="carousel-indicators">
@@ -139,32 +107,35 @@
           aria-label="Slide 3"
         ></button>
       </div>
-      <div class="carousel-inner">
+      <div class="carousel-inner ">
         <div class="carousel-item active my-3">
-          <div class="d-flex flex-nowrap justify-content-between">
-            <img src="testImage.jpg" class="movieImage" alt="..." />
-            <img src="testImage.jpg" class="movieImage" alt="..." />
-            <img src="testImage.jpg" class="movieImage" alt="..." />
-            <img src="testImage.jpg" class="movieImage" alt="..." />
-            <img src="testImage.jpg" class="movieImage" alt="..." />
+          <div class="row justify-content-start d-sm-flex flex-md-nowrap justify-content-sm-between">
+            <img src="testImage.jpg" class="movieImage col-6 col-md-2 mb-2" alt="..." />
+            <img src="testImage.jpg" class="movieImage col-6 col-md-2 mb-2" alt="..." />
+            <img src="testImage.jpg" class="movieImage col-6 col-md-2 mb-2" alt="..." />
+            <img src="testImage.jpg" class="movieImage col-6 col-md-2 mb-2" alt="..." />
+            <img src="testImage.jpg" class="movieImage col-6 col-md-2 mb-2" alt="..." />
+            <img src="testImage.jpg" class="movieImage col-6 col-md-2 mb-2" alt="..." />
           </div>
         </div>
         <div class="carousel-item my-3">
-          <div class="d-flex flex-nowrap justify-content-between">
-            <img src="testImage2.jpg" class="movieImage" alt="..." />
-            <img src="testImage2.jpg" class="movieImage" alt="..." />
-            <img src="testImage2.jpg" class="movieImage" alt="..." />
-            <img src="testImage2.jpg" class="movieImage" alt="..." />
-            <img src="testImage2.jpg" class="movieImage" alt="..." />
+          <div class="row justify-content-start d-sm-flex flex-md-nowrap justify-content-sm-between">
+            <img src="testImage2.jpg" class="movieImage col-6 col-md-2 mb-2" alt="..." />
+            <img src="testImage2.jpg" class="movieImage col-6 col-md-2 mb-2" alt="..." />
+            <img src="testImage2.jpg" class="movieImage col-6 col-md-2 mb-2" alt="..." />
+            <img src="testImage2.jpg" class="movieImage col-6 col-md-2 mb-2" alt="..." />
+            <img src="testImage2.jpg" class="movieImage col-6 col-md-2 mb-2" alt="..." />
+            <img src="testImage2.jpg" class="movieImage col-6 col-md-2 mb-2" alt="..." />
           </div>
         </div>
         <div class="carousel-item my-3">
-          <div class="d-flex flex-nowrap justify-content-between">
-            <img src="testImage3.jpg" class="movieImage" alt="..." />
-            <img src="testImage3.jpg" class="movieImage" alt="..." />
-            <img src="testImage3.jpg" class="movieImage" alt="..." />
-            <img src="testImage3.jpg" class="movieImage" alt="..." />
-            <img src="testImage3.jpg" class="movieImage" alt="..." />
+          <div class="row justify-content-start d-sm-flex flex-md-nowrap justify-content-sm-between">
+            <img src="testImage3.jpg" class="movieImage col-6 col-md-2 mb-2" alt="..." />
+            <img src="testImage3.jpg" class="movieImage col-6 col-md-2 mb-2" alt="..." />
+            <img src="testImage3.jpg" class="movieImage col-6 col-md-2 mb-2" alt="..." />
+            <img src="testImage3.jpg" class="movieImage col-6 col-md-2 mb-2" alt="..." />
+            <img src="testImage3.jpg" class="movieImage col-6 col-md-2 mb-2" alt="..." />
+            <img src="testImage3.jpg" class="movieImage col-6 col-md-2 mb-2" alt="..." />
           </div>
         </div>
       </div>
@@ -193,55 +164,271 @@
         <span class="visually-hidden">Next</span>
       </button>
     </div>
-    <!--* Carousel dispositivos con pequeña resolucion -->
+    
+    <!--* Películas de comedia -->
+    <h3 class="carouselContainer mt-3 mb-1">Comedia</h3>
     <div
-      id="recommendedCarouselMobile"
-      class="carousel slide d-sm-none"
-      data-bs-ride="carousel"
+      id="comedyCarousel"
+      class="carousel slide carouselContainer d-sm-flex"
+      data-bs-ride="true"
     >
-      <div class="carousel-inner">
+      <div class="carousel-indicators">
+        <button
+          type="button"
+          data-bs-target="#comedyCarousel"
+          data-bs-slide-to="0"
+          class="active"
+          aria-current="true"
+          aria-label="Slide 1"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#comedyCarousel"
+          data-bs-slide-to="1"
+          aria-label="Slide 2"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#comedyCarousel"
+          data-bs-slide-to="2"
+          aria-label="Slide 3"
+        ></button>
+      </div>
+      <div class="carousel-inner ">
         <div class="carousel-item active my-3">
-          <img src="testImage.jpg" class="d-block movieImageMobile" alt="..." />
+          <div class="row justify-content-start d-sm-flex flex-md-nowrap justify-content-sm-between">
+            <img src="testImage.jpg" class="movieImage col-6 col-md-2 mb-2" alt="..." />
+            <img src="testImage.jpg" class="movieImage col-6 col-md-2 mb-2" alt="..." />
+            <img src="testImage.jpg" class="movieImage col-6 col-md-2 mb-2" alt="..." />
+            <img src="testImage.jpg" class="movieImage col-6 col-md-2 mb-2" alt="..." />
+            <img src="testImage.jpg" class="movieImage col-6 col-md-2 mb-2" alt="..." />
+            <img src="testImage.jpg" class="movieImage col-6 col-md-2 mb-2" alt="..." />
+          </div>
         </div>
         <div class="carousel-item my-3">
-          <img
-            src="testImage2.jpg"
-            class="d-block movieImageMobile"
-            alt="..."
-          />
+          <div class="row justify-content-start d-sm-flex flex-md-nowrap justify-content-sm-between">
+            <img src="testImage2.jpg" class="movieImage col-6 col-md-2 mb-2" alt="..." />
+            <img src="testImage2.jpg" class="movieImage col-6 col-md-2 mb-2" alt="..." />
+            <img src="testImage2.jpg" class="movieImage col-6 col-md-2 mb-2" alt="..." />
+            <img src="testImage2.jpg" class="movieImage col-6 col-md-2 mb-2" alt="..." />
+            <img src="testImage2.jpg" class="movieImage col-6 col-md-2 mb-2" alt="..." />
+            <img src="testImage2.jpg" class="movieImage col-6 col-md-2 mb-2" alt="..." />
+          </div>
         </div>
         <div class="carousel-item my-3">
-          <img
-            src="testImage3.jpg"
-            class="d-block movieImageMobile"
-            alt="..."
-          />
+          <div class="row justify-content-start d-sm-flex flex-md-nowrap justify-content-sm-between">
+            <img src="testImage3.jpg" class="movieImage col-6 col-md-2 mb-2" alt="..." />
+            <img src="testImage3.jpg" class="movieImage col-6 col-md-2 mb-2" alt="..." />
+            <img src="testImage3.jpg" class="movieImage col-6 col-md-2 mb-2" alt="..." />
+            <img src="testImage3.jpg" class="movieImage col-6 col-md-2 mb-2" alt="..." />
+            <img src="testImage3.jpg" class="movieImage col-6 col-md-2 mb-2" alt="..." />
+            <img src="testImage3.jpg" class="movieImage col-6 col-md-2 mb-2" alt="..." />
+          </div>
         </div>
       </div>
       <button
         class="carousel-control-prev"
         type="button"
-        data-bs-target="#recommendedCarouselMobile"
+        data-bs-target="#comedyCarousel"
         data-bs-slide="prev"
       >
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span
+          class="carousel-control-prev-icon d-block position-absolute start-0"
+          aria-hidden="true"
+        ></span>
         <span class="visually-hidden">Previous</span>
       </button>
       <button
         class="carousel-control-next"
         type="button"
-        data-bs-target="#recommendedCarouselMobile"
+        data-bs-target="#comedyCarousel"
         data-bs-slide="next"
       >
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span
+          class="carousel-control-next-icon d-block position-absolute end-0"
+          aria-hidden="true"
+        ></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>    
+
+    <!--* Películas de Drama -->
+    <h3 class="carouselContainer mt-3 mb-1">Drama</h3>
+    <div
+      id="dramaCarousel"
+      class="carousel slide carouselContainer d-sm-flex"
+      data-bs-ride="true"
+    >
+      <div class="carousel-indicators">
+        <button
+          type="button"
+          data-bs-target="#dramaCarousel"
+          data-bs-slide-to="0"
+          class="active"
+          aria-current="true"
+          aria-label="Slide 1"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#dramaCarousel"
+          data-bs-slide-to="1"
+          aria-label="Slide 2"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#dramaCarousel"
+          data-bs-slide-to="2"
+          aria-label="Slide 3"
+        ></button>
+      </div>
+      <div class="carousel-inner ">
+        <div class="carousel-item active my-3">
+          <div class="row justify-content-start d-sm-flex flex-md-nowrap justify-content-sm-between">
+            <img src="testImage.jpg" class="movieImage col-6 col-md-2 mb-2" alt="..." />
+            <img src="testImage.jpg" class="movieImage col-6 col-md-2 mb-2" alt="..." />
+            <img src="testImage.jpg" class="movieImage col-6 col-md-2 mb-2" alt="..." />
+            <img src="testImage.jpg" class="movieImage col-6 col-md-2 mb-2" alt="..." />
+            <img src="testImage.jpg" class="movieImage col-6 col-md-2 mb-2" alt="..." />
+            <img src="testImage.jpg" class="movieImage col-6 col-md-2 mb-2" alt="..." />
+          </div>
+        </div>
+        <div class="carousel-item my-3">
+          <div class="row justify-content-start d-sm-flex flex-md-nowrap justify-content-sm-between">
+            <img src="testImage2.jpg" class="movieImage col-6 col-md-2 mb-2" alt="..." />
+            <img src="testImage2.jpg" class="movieImage col-6 col-md-2 mb-2" alt="..." />
+            <img src="testImage2.jpg" class="movieImage col-6 col-md-2 mb-2" alt="..." />
+            <img src="testImage2.jpg" class="movieImage col-6 col-md-2 mb-2" alt="..." />
+            <img src="testImage2.jpg" class="movieImage col-6 col-md-2 mb-2" alt="..." />
+            <img src="testImage2.jpg" class="movieImage col-6 col-md-2 mb-2" alt="..." />
+          </div>
+        </div>
+        <div class="carousel-item my-3">
+          <div class="row justify-content-start d-sm-flex flex-md-nowrap justify-content-sm-between">
+            <img src="testImage3.jpg" class="movieImage col-6 col-md-2 mb-2" alt="..." />
+            <img src="testImage3.jpg" class="movieImage col-6 col-md-2 mb-2" alt="..." />
+            <img src="testImage3.jpg" class="movieImage col-6 col-md-2 mb-2" alt="..." />
+            <img src="testImage3.jpg" class="movieImage col-6 col-md-2 mb-2" alt="..." />
+            <img src="testImage3.jpg" class="movieImage col-6 col-md-2 mb-2" alt="..." />
+            <img src="testImage3.jpg" class="movieImage col-6 col-md-2 mb-2" alt="..." />
+          </div>
+        </div>
+      </div>
+      <button
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#dramaCarousel"
+        data-bs-slide="prev"
+      >
+        <span
+          class="carousel-control-prev-icon d-block position-absolute start-0"
+          aria-hidden="true"
+        ></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#dramaCarousel"
+        data-bs-slide="next"
+      >
+        <span
+          class="carousel-control-next-icon d-block position-absolute end-0"
+          aria-hidden="true"
+        ></span>
         <span class="visually-hidden">Next</span>
       </button>
     </div>
-
+    
+    <!--* Películas de Terror -->
+    <h3 class="carouselContainer mt-3 mb-1">Terror</h3>
+    <div
+      id="horrorCarousel"
+      class="carousel slide carouselContainer d-sm-flex"
+      data-bs-ride="true"
+    >
+      <div class="carousel-indicators">
+        <button
+          type="button"
+          data-bs-target="#horrorCarousel"
+          data-bs-slide-to="0"
+          class="active"
+          aria-current="true"
+          aria-label="Slide 1"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#horrorCarousel"
+          data-bs-slide-to="1"
+          aria-label="Slide 2"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#horrorCarousel"
+          data-bs-slide-to="2"
+          aria-label="Slide 3"
+        ></button>
+      </div>
+      <div class="carousel-inner ">
+        <div class="carousel-item active my-3">
+          <div class="row justify-content-start d-sm-flex flex-md-nowrap justify-content-sm-between">
+            <img src="testImage.jpg" class="movieImage col-6 col-md-2 mb-2" alt="..." />
+            <img src="testImage.jpg" class="movieImage col-6 col-md-2 mb-2" alt="..." />
+            <img src="testImage.jpg" class="movieImage col-6 col-md-2 mb-2" alt="..." />
+            <img src="testImage.jpg" class="movieImage col-6 col-md-2 mb-2" alt="..." />
+            <img src="testImage.jpg" class="movieImage col-6 col-md-2 mb-2" alt="..." />
+            <img src="testImage.jpg" class="movieImage col-6 col-md-2 mb-2" alt="..." />
+          </div>
+        </div>
+        <div class="carousel-item my-3">
+          <div class="row justify-content-start d-sm-flex flex-md-nowrap justify-content-sm-between">
+            <img src="testImage2.jpg" class="movieImage col-6 col-md-2 mb-2" alt="..." />
+            <img src="testImage2.jpg" class="movieImage col-6 col-md-2 mb-2" alt="..." />
+            <img src="testImage2.jpg" class="movieImage col-6 col-md-2 mb-2" alt="..." />
+            <img src="testImage2.jpg" class="movieImage col-6 col-md-2 mb-2" alt="..." />
+            <img src="testImage2.jpg" class="movieImage col-6 col-md-2 mb-2" alt="..." />
+            <img src="testImage2.jpg" class="movieImage col-6 col-md-2 mb-2" alt="..." />
+          </div>
+        </div>
+        <div class="carousel-item my-3">
+          <div class="row justify-content-start d-sm-flex flex-md-nowrap justify-content-sm-between">
+            <img src="testImage3.jpg" class="movieImage col-6 col-md-2 mb-2" alt="..." />
+            <img src="testImage3.jpg" class="movieImage col-6 col-md-2 mb-2" alt="..." />
+            <img src="testImage3.jpg" class="movieImage col-6 col-md-2 mb-2" alt="..." />
+            <img src="testImage3.jpg" class="movieImage col-6 col-md-2 mb-2" alt="..." />
+            <img src="testImage3.jpg" class="movieImage col-6 col-md-2 mb-2" alt="..." />
+            <img src="testImage3.jpg" class="movieImage col-6 col-md-2 mb-2" alt="..." />
+          </div>
+        </div>
+      </div>
+      <button
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#horrorCarousel"
+        data-bs-slide="prev"
+      >
+        <span
+          class="carousel-control-prev-icon d-block position-absolute start-0"
+          aria-hidden="true"
+        ></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#horrorCarousel"
+        data-bs-slide="next"
+      >
+        <span
+          class="carousel-control-next-icon d-block position-absolute end-0"
+          aria-hidden="true"
+        ></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+    
     <!--* Footer-->
-
     <footer
-      class="footer d-flex justify-content-center position-absolute bottom-0 w-100"
+      class="footer d-flex justify-content-center position-static bottom-0 w-100"
     >
       <div class="container">
         <a
