@@ -4,6 +4,12 @@ body{
 }
 .description{
     height: 39vh;
+    
+}
+.text-color{
+    font-size: 30px;
+    font-weight: 800;
+    text-shadow: 1px 0px 1px grey;
 }
 .footer{
     background-color: rgba(60.78, 60.78, 60.78, 0.2);
@@ -18,8 +24,9 @@ body{
     padding-top: 28vh;
 }
 .rollingmovies-text{
-    font-weight:700;
-    font-size: 40px;
+    font-weight:800;
+    font-size: 60px;
+    text-shadow: 1px 0px 1px grey;
 }
 .footer, .socialm{
     text-decoration: none;
