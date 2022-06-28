@@ -34,8 +34,8 @@ const register = (event) => {
   let pass = document.getElementById("register-password").value;
   let pass2 = document.getElementById("register-password-confirm").value;
 
-  let nameCheck = /^([a-zA-Z]){4,35}$/.test(name);
-  let lastNameCheck = /^([a-zA-Z]){4,35}$/.test(lastName);
+  let nameCheck = /^[A-Za-z0-9\s]{3,30}$/g.test(name);
+  let lastNameCheck = /^[A-Za-z0-9\s]{3,30}$/g.test(lastName);
   let emailCheck = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/.test(
     email
   );
