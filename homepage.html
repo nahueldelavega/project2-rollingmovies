@@ -47,17 +47,18 @@
           id="navbarNav"
         >
           <ul class="navbar-nav">
-            <li class="nav-item">
+            <li class="nav-item d-flex justify-content-end">
               <a class="nav-link btn" href="#">Inicio</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item d-flex justify-content-end">
               <a class="nav-link btn" href="#">Contacto</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item d-flex justify-content-end">
               <a class="nav-link btn">Acerca de</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link btn">Cerrar Sesión</a>
+            <li class="nav-item d-flex justify-content-end">
+              <a class="nav-link btn" href="./index.html" onclick="localStorage.removeItem('userLogged')" >Cerrar Sesión</a>
+              <!-- APLICAR EN CADA PAGINA -->
             </li>
           </ul>
         </div>
@@ -107,8 +108,13 @@
           aria-label="Slide 3"
         ></button>
       </div>
+<<<<<<< HEAD
       <div id="recommendedCarouselMovies" class="carousel-inner recommendedCarouselMovies">
         <!-- <div class="carousel-item active my-3">
+=======
+      <div class="carousel-inner">
+        <div class="carousel-item active my-3">
+>>>>>>> 1cf46585d3753df9a13e9e8c10dc7ba4dc462b54
           <div class="row justify-content-start d-sm-flex flex-md-nowrap justify-content-sm-between">
             <img src="testImage.jpg" class="movieImage col-6 col-md-2 mb-2" alt="..." />
             <img src="testImage.jpg" class="movieImage col-6 col-md-2 mb-2" alt="..." />
@@ -427,35 +433,27 @@
     </div>
     
     <!--* Footer-->
-    <footer
-      class="footer d-flex justify-content-center position-static bottom-0 w-100"
-    >
+    <footer class="d-flex justify-content-center footer position-absolute bottom-0 w-100">
       <div class="container">
-        <a
-          class="d-flex justify-content-center navbar-brand"
-          href="landing-page.html"
-        >
-          <img
-            src="./assets/logo.png"
-            alt=""
-            width="30"
-            height="24"
-            class="d-inline-block align-text-top text-color"
-          />
-          <div>RollingMovies</div>
-        </a>
-        <h6 class="d-flex justify-content-center">
-          Copyright 2022. All Rights Reserved.
-        </h6>
-        <div class="container d-flex justify-content-between column">
+      <h6 class="d-flex justify-content-center ">
+      Copyright 2022. All Rights Reserved.
+      </h6>
+      <div class="container d-flex justify-content-between column">
           <ul class="container d-flex justify-content-center">
-            <a class="pe-3 socialm">Instagram</a>
-            <a class="pe-3 socialm">Facebook</a>
-            <a class="pe-3 socialm">TikTok</a>
-          </ul>
-        </div>
+          <a class="pe-3 socialm">Nosotros</a>
+          <a class="pe-3 socialm">Contacto</a>
+          <a class="pe-3 socialm">Consúltanos</a>
+      </ul>
       </div>
-    </footer>
+      <div class="container d-flex justify-content-between column">
+          <ul class="container d-flex justify-content-center">
+              <a class="pe-3 socialm">Instagram</a>
+              <a class="pe-3 socialm">Facebook</a>
+              <a class="pe-3 socialm">TikTok</a>
+      </ul>
+      </div>
+      </div>
+  </footer>
 
     <!--* Agregado de Bootstrap -->
 
