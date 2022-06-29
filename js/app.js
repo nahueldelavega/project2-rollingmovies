@@ -1,9 +1,10 @@
 // PRUEBA DE USUARIOS
 
 class User {
-  constructor(id, name, email, password, admin) {
-    this.name = name;
+  constructor(id, name, lastName, email, password, admin) {
     this.id = id;
+    this.name = name;
+    this.lastName = lastName;
     this.email = email;
     this.password = password;
     this.favs = [];
@@ -20,8 +21,13 @@ if (usersFromLS) {
   users = usersFromLS;
 } else {
   users = [
-    new User(),
+    new User(1,'Nahuel', 'De La Vega','nahuel@gmail.com','nahuel123',true),
+    new User(2,'Gonzalo', 'Arguello','gonzalo@gmail.com','gonzalo123',true),
+    new User(3,'Pablo', 'Brennan','pablo@gmail.com','pablo123',true)
   ];
+  // users = [
+  //   new User(),
+  // ];
   localStorage.setItem("users", JSON.stringify(users));
 }
 
@@ -68,3 +74,39 @@ const register = (event) => {
     console.log("no puedes entrar");
   }
 };
+
+
+
+
+//***************************************/
+
+
+
+const login = (event)=>{
+  event.preventDefault();
+  let email = document.querySelector('#login-email').value;
+  let pass = document.querySelector('#login-pass').value;
+  let emailCheck= /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/.test(email);
+  if(emailCheck){
+    let userFound = users.find(user=>user.email===email);
+    if(userFound && userFound.password === pass){
+      localStorage.setItem('favs',JSON.stringify(userFound.favs));
+      localStorage.setItem('cart',JSON.stringify(userFound.cart));
+      localStorage.setItem('user',JSON.stringify(userFound.id));
+      window.location.assign(window.location.origin + '/homepage.html')
+  }else{
+    errorAlert('Email o contraseña invalida')
+  }
+  }
+}
+
+function errorAlert (texto){
+  let errorMessage = document.createElement('div');
+  errorMessage.innerText = texto;
+  errorMessage.classList.add('alert','alert-danger');
+  let loginForm = document.getElementById('login-form');
+  loginForm.appendChild(errorMessage);
+  setTimeout(()=>{
+    errorMessage.remove()
+  },3000)
+}
