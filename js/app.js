@@ -20,7 +20,7 @@ if (usersFromLS) {
   users = usersFromLS;
 } else {
   users = [
-    new User(1, "Nahuel de la Vega", "nahuel@gmail.com", "Asd12345", true),
+    new User(),
   ];
   localStorage.setItem("users", JSON.stringify(users));
 }
