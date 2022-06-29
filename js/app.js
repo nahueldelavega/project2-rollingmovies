@@ -21,9 +21,13 @@ if (usersFromLS) {
   users = usersFromLS;
 } else {
   users = [
+<<<<<<< HEAD
+    new User(),
+=======
     new User(1,'Nahuel', 'de la Vega','nahuel@gmail.com','nahuel123',true),
     new User(2,'Gonzalo', 'Arguello','gonzalo@gmail.com','gonzalo123',true),
     new User(3,'Pablo', 'Brennan','pablo@gmail.com','pablo123',true)
+>>>>>>> 1cf46585d3753df9a13e9e8c10dc7ba4dc462b54
   ];
   // users = [
   //   new User(),
