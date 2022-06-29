@@ -1,3 +1,7 @@
+if (!localStorage.getItem('userLogged')){
+    window.location.assign(window.location.origin)
+}
+
 // let row = document.querySelector(".carouselContainer");
 // let movies = document.querySelectorAll(".movie");
 

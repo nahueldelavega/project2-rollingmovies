@@ -65,6 +65,7 @@ const register = (event) => {
       usersLS.push(
         new User(usersLS.length + 1, name, lastName, email, pass, false)
       );
+      localStorage.setItem("userLogged", true)
       localStorage.setItem("user", JSON.stringify(usersLS.length + 1));
       window.location.assign(window.location.origin + "/homepage.html");
     }
