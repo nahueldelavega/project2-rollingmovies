@@ -8,12 +8,12 @@ class User {
     this.email = email;
     this.password = password;
     this.favs = [];
-    this.cart = [];
     this.admin = admin;
   }
 }
 
 let users;
+console.log(users)
 
 const usersFromLS = JSON.parse(localStorage.getItem("users"));
 
@@ -21,7 +21,9 @@ if (usersFromLS) {
   users = usersFromLS;
 } else {
   users = [
-    new User(),
+    new User(1,'Nahuel', 'De La Vega','nahuel@gmail.com','nahuel123',true),
+    new User(2,'Gonzalo', 'Arguello','gonzalo@gmail.com','gonzalo123',true),
+    new User(3,'Pablo', 'Brennan','pablo@gmail.com','pablo123',true)
   ];
   // users = [
   //   new User(),
@@ -75,11 +77,7 @@ const register = (event) => {
 };
 
 
-
-
-//***************************************/
-
-
+//* LOGIN
 
 const login = (event)=>{
   event.preventDefault();
@@ -89,8 +87,8 @@ const login = (event)=>{
   if(emailCheck){
     let userFound = users.find(user=>user.email===email);
     if(userFound && userFound.password === pass){
+      localStorage.setItem("userLogged", true)
       localStorage.setItem('favs',JSON.stringify(userFound.favs));
-      localStorage.setItem('cart',JSON.stringify(userFound.cart));
       localStorage.setItem('user',JSON.stringify(userFound.id));
       window.location.assign(window.location.origin + '/homepage.html')
   }else{
@@ -108,4 +106,20 @@ function errorAlert (texto){
   setTimeout(()=>{
     errorMessage.remove()
   },3000)
+}
+
+// IDENTIFICAMOS SI EL USUARIO ES ADMIN O NO
+let userId = localStorage.getItem('user');
+console.log(userId);
+users = JSON.parse(localStorage.getItem('users'));
+console.log(users);
+let userActive = users.find(user=>user.id==userId);
+console.log(userActive);
+if(userActive.admin){
+  let adminButton = document.createElement('li');
+  adminButton.classList.add('nav-item');
+  adminButton.innerHTML=`
+  <a class="nav-link" href="http://127.0.0.1:5500/ecommerce/admin.html">Administración</a>
+  `;
+  document.getElementById('options-header').appendChild(adminButton)
 }
