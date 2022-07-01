@@ -35,18 +35,26 @@ let divRecommendedCarouselMovies = document.querySelectorAll(".divRecommendedMov
 
 if(divRecommendedCarouselMovies.length === 0){
     let moviesPost = document.createElement('div')
-    moviesPost.classList.add("divRecommendedMovies")
+    moviesPost.classList.add("divRecommendedMovies", "carousel-item", "active", "my-3")
     moviesPost.innerHTML=`
-    <div class="row justify-content-start d-sm-flex flex-md-nowrap justify-content-sm-between">
-        <img src="testImage.jpg" class="movieImage col-6 col-md-2 mb-2" alt="..." />
-        <img src="testImage.jpg" class="movieImage col-6 col-md-2 mb-2" alt="..." />
-        <img src="testImage.jpg" class="movieImage col-6 col-md-2 mb-2" alt="..." />
-        <img src="testImage.jpg" class="movieImage col-6 col-md-2 mb-2" alt="..." />
-        <img src="testImage.jpg" class="movieImage col-6 col-md-2 mb-2" alt="..." />
-        <img src="testImage.jpg" class="movieImage col-6 col-md-2 mb-2" alt="..." />
+    <div class="divRecomendadas row justify-content-start d-sm-flex flex-md-nowrap justify-content-sm-between">
+        <!-- SOY EL DIV, CUERNO -->
+        <img src="testImage.jpg" class="movieTest movieImage col-6 col-md-2 mb-2" alt="..." />
+        <img src="testImage.jpg" class="movieTest movieImage col-6 col-md-2 mb-2" alt="..." />
+        <img src="testImage.jpg" class="movieTest movieImage col-6 col-md-2 mb-2" alt="..." />
+        <img src="testImage.jpg" class="movieTest movieImage col-6 col-md-2 mb-2" alt="..." />
+        <img src="testImage.jpg" class="movieTest movieImage col-6 col-md-2 mb-2" alt="..." />
+        <img src="testImage.jpg" class="movieTest movieImage col-6 col-md-2 mb-2" alt="..." />
     </div>`
     recommendedCarouselMovies.appendChild(moviesPost)
 }
+
+// ! hacer un array dentro de otro array
+
+// let recomendadas = document.querySelectorAll(".divRecomendadas")
+// let movieTest = document.querySelectorAll(".movieTest")
+// console.log(recomendadas)
+// console.log(movieTest)
 
 //? Crear post de película
 // moviesBase.forEach(movies=>{
