@@ -1,3 +1,7 @@
+if (!localStorage.getItem('userLogged')){
+    window.location.assign(window.location.origin)
+}
+
 class Movie{
     constructor(id,name, urlVideo, urlImage){
         this.id = id;
@@ -40,7 +44,7 @@ if(divRecommendedCarouselMovies.length === 0){
 
 //? Crear post de película
 // moviesBase.forEach(movies=>{
-       
+    
 // //* Aca tengo que agregar el detailPage
 
 // })
@@ -49,3 +53,19 @@ if(divRecommendedCarouselMovies.length === 0){
 
 console.log(recommendedCarouselMovies.length)
 console.log(divRecommendedCarouselMovies.length)
+
+// IDENTIFICAMOS SI EL USUARIO ES ADMIN O NO
+let userId = localStorage.getItem('user');
+console.log(userId);
+users = JSON.parse(localStorage.getItem('users'));
+console.log(users);
+let userActive = users.find(user=>user.id==userId);
+console.log(userActive);
+if(userActive.admin){
+let adminButton = document.createElement('li');
+adminButton.classList.add('nav-item');
+adminButton.innerHTML=`
+<a class="nav-link" href="http://127.0.0.1:5500/admin.html">Administración</a>
+`;
+document.getElementById('options-header').appendChild(adminButton)
+}
