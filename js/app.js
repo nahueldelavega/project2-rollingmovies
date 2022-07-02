@@ -23,11 +23,9 @@ if (usersFromLS) {
   users = [
     new User(1,'Nahuel', 'De La Vega','nahuel@gmail.com','nahuel123',true),
     new User(2,'Gonzalo', 'Arguello','gonzalo@gmail.com','gonzalo123',true),
-    new User(3,'Pablo', 'Brennan','pablo@gmail.com','pablo123',true)
+    new User(3,'Pablo', 'Brennan','pablo@gmail.com','pablo123',true),
+    new User(4, 'Victor','Vargas', 'victor@gmail.com', 'victor123', true)
   ];
-  // users = [
-  //   new User(),
-  // ];
   localStorage.setItem("users", JSON.stringify(users));
 }
 
@@ -77,7 +75,7 @@ const register = (event) => {
 };
 
 
-//* LOGIN
+//LOGIN
 
 const login = (event)=>{
   event.preventDefault();

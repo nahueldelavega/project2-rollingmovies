@@ -50,7 +50,7 @@ if(divRecommendedCarouselMovies.length === 0){
 
 //? Crear post de película
 // moviesBase.forEach(movies=>{
-       
+    
 // //* Aca tengo que agregar el detailPage
 
 // })
@@ -64,14 +64,14 @@ console.log(divRecommendedCarouselMovies.length)
 let userId = localStorage.getItem('user');
 console.log(userId);
 let users = JSON.parse(localStorage.getItem('users'));
+users = JSON.parse(localStorage.getItem('users'));
 console.log(users);
 let userActive = users.find(user=>user.id==userId);
 console.log(userActive);
 if(userActive.admin){
-  let adminButton = document.createElement('li');
-  adminButton.classList.add('nav-item');
-  adminButton.innerHTML=`
-  <a class="nav-link" href="http://127.0.0.1:5500/admin.html">Administración</a>
-  `;
-  document.getElementById('options-header').appendChild(adminButton)
+let adminButton = document.createElement('li');
+adminButton.classList.add('nav-item');
+adminButton.innerHTML=`
+<a class="nav-link" href="http://127.0.0.1:5500/admin.html">Administración</a>`;
+document.getElementById('options-header').appendChild(adminButton)
 }
