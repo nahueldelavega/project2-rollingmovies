@@ -87,9 +87,9 @@ const login = (event)=>{
   if(emailCheck){
     let userFound = users.find(user=>user.email===email);
     if(userFound && userFound.password === pass){
-      localStorage.setItem("userLogged", true)
       localStorage.setItem('favs',JSON.stringify(userFound.favs));
       localStorage.setItem('user',JSON.stringify(userFound.id));
+      localStorage.setItem("userLogged", true)
       window.location.assign(window.location.origin + '/homepage.html')
   }else{
     errorAlert('Email o contraseña invalida')
@@ -119,7 +119,7 @@ if(userActive.admin){
   let adminButton = document.createElement('li');
   adminButton.classList.add('nav-item');
   adminButton.innerHTML=`
-  <a class="nav-link" href="http://127.0.0.1:5500/ecommerce/admin.html">Administración</a>
+  <a class="nav-link" href="http://127.0.0.1:5500/admin.html">Administración</a>
   `;
   document.getElementById('options-header').appendChild(adminButton)
 }
