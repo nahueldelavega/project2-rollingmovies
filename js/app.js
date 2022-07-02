@@ -13,6 +13,7 @@ class User {
 }
 
 let users;
+console.log(users)
 
 const usersFromLS = JSON.parse(localStorage.getItem("users"));
 
@@ -74,9 +75,7 @@ const register = (event) => {
 };
 
 
-
-
-
+//LOGIN
 
 const login = (event)=>{
   event.preventDefault();
