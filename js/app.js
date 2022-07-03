@@ -58,19 +58,25 @@ const register = (event) => {
     let usersLS = JSON.parse(localStorage.getItem("users"));
 
     if (usersLS.find((user) => user.email == email)) {
-      console.log("sos otra persona");
+      console.log("no pudimos validar tu identidad");
     } else {
       usersLS.push(
         new User(usersLS.length + 1, name, lastName, email, pass, false)
-      );
-      localStorage.setItem("userLogged", true)
-      localStorage.setItem("user", JSON.stringify(usersLS.length + 1));
-      window.location.assign(window.location.origin + "/homepage.html");
-    }
-
-    localStorage.setItem("users", JSON.stringify(usersLS));
-  } else {
-    console.log("no puedes entrar");
+        );
+        localStorage.setItem("userLogged", true)
+        localStorage.setItem("user", JSON.stringify(usersLS.length + 1));
+        window.location.assign(window.location.origin + "/homepage.html");
+      }
+      
+      localStorage.setItem("users", JSON.stringify(usersLS));
+    } else {
+      console.log("no puedes entrar aquí, pero si a la página de al lado");
+      Swal.fire({
+        position: 'top-end',
+        title: 'Credenciales incorrectas',
+        showConfirmButton: false,
+        timer: 2000
+      })
   }
 };
 
