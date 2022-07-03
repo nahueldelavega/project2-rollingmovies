@@ -1,3 +1,6 @@
+*{
+    font-family: 'Karla', sans-serif;
+}
 body{
     background-image: url(/assets/bf-red-landing.jpg);
     background-size: cover;
