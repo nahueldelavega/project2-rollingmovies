@@ -71,15 +71,20 @@ const register = (event) => {
       localStorage.setItem("users", JSON.stringify(usersLS));
     } else {
       console.log("no puedes entrar aquí, pero si a la página de al lado");
-      Swal.fire({
-        position: 'top-end',
-        title: 'Credenciales incorrectas',
-        showConfirmButton: false,
-        timer: 2000
-      })
+      incorrectAlert('Contraseña incorrecta.')
   }
 };
 
+function incorrectAlert (texto){
+  let errorMessage = document.createElement('div');
+  errorMessage.innerText = texto;
+  errorMessage.classList.add('alert','alert-danger');
+  let registerForm = document.getElementById('register-form-1');
+  registerForm.appendChild(errorMessage);
+  setTimeout(()=>{
+    errorMessage.remove()
+  },3000)
+}
 
 //LOGIN
 
