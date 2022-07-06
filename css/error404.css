@@ -1,0 +1,44 @@
+body {
+    background: rgb(241, 49, 49);
+    background-size: cover;
+    margin-bottom: 50px;
+}
+img {
+    width: 50%;
+    margin-top: 50px;
+    border: 50px;
+
+}
+.container{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+    justify-content: center;
+}
+h1{
+    color: black;
+    font-size: 50px;
+    background: white;
+}
+p{
+    color: black;
+    font-size: 20px;
+    padding: 20px;
+}
+button{
+    padding: 10px 30px;
+    border-radius: 15px;
+    border: none;
+}
+@media screen and (max-width:630px)
+{
+    h1 { font-size: 50px;}
+}
+
+
+
+    
+
+
