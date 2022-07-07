@@ -1,3 +1,6 @@
+* {
+    font-family: "Karla", sans-serif;
+  }
 body {
     background: rgb(241, 49, 49);
     background-size: cover;
@@ -8,7 +11,6 @@ body {
     margin-bottom: 10px;
 }
 h2 {
-    font-family: pacifico;
     color: black;
     background-color: white;
    
@@ -19,7 +21,6 @@ h2 {
     align-items: flex-start;
 }
 h3 {
-    font-family: pacifico;
     color: black;
     margin-bottom: 10px;
     font-weight: bold;
@@ -32,5 +33,11 @@ img {
     background-size:cover;
 
 }
-
- 
+button{
+    padding: 10px 30px;
+    border-radius: 15px;
+    border: none;
+}
+.homepage{
+    text-decoration: none;
+}

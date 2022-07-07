@@ -1,16 +1,16 @@
+* {
+    font-family: "Karla", sans-serif;
+  }
 body {
     background: rgb(241, 49, 49);
-    background-size: cover;
-    margin-bottom: 50px;
 }
 img {
     width: 50%;
     margin-top: 50px;
     border: 50px;
-
 }
 .container{
-    height: 100vh;
+
     display: flex;
     flex-direction: column;
     gap: 30px;
@@ -18,9 +18,9 @@ img {
     justify-content: center;
 }
 h1{
-    color: black;
+    color: white;
     font-size: 50px;
-    background: white;
+    padding-top: 0;
 }
 p{
     color: black;
@@ -36,9 +36,6 @@ button{
 {
     h1 { font-size: 50px;}
 }
-
-
-
-    
-
-
+.homepage{
+    text-decoration: none;
+}
