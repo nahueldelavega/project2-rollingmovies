@@ -26,14 +26,16 @@ body {
   border: 1px solid white;
 }
 
-.carouselContainer{
+
+.lista-imagenes{
   width: 90%;
   margin: 0px auto;
+  overflow-y: auto;
+  /* overflow-x:; */
 }
 
-
 .movieImage{
-  width: 19%;
+  width: 16.6%;
   height: 250px;
   object-fit: cover;
 }
@@ -72,10 +74,19 @@ body {
   background-color: rgba(60.78, 60.78, 60.78, 0.2);
 }
 
-@media screen and (max-width: 576px) {
+@media screen and (max-width: 670px) {
   .mainImage {
     height: 45vh;
     object-fit: cover;
+  }
+  .movieImage{
+    width: 20%;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .movieImage{
+    width: 45%;
   }
 }
 

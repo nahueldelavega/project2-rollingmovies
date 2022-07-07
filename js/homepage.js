@@ -1,77 +1,156 @@
-if (!localStorage.getItem('userLogged')){
-    window.location.assign(window.location.origin)
+if (!localStorage.getItem("userLogged")) {
+  window.location.assign(window.location.origin);
 }
 
-class Movie{
-    constructor(id,name, urlVideo, urlImage){
-        this.id = id;
-        this.name = name;
-        this.urlVideo = urlVideo;
-        this.urlImage = urlImage;
-      }
+class Movie {
+  constructor(id, name, categories, recomended, urlVideo, urlImage) {
+    this.id = id;
+    this.name = name;
+    this.categories = categories;
+    this.recomended = recomended;
+    this.urlVideo = urlVideo;
+    this.urlImage = urlImage;
+  }
 }
 
 //! Base de peliculas
 
 let moviesBase = [
-    new Movie(1,'Movie1','https://www.youtube.com/watch?v=jYRtFFa4hT8','https://images.unsplash.com/photo-1485846234645-a62644f84728?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1459&q=80'),
-    new Movie(2,'Movie2','https://www.youtube.com/watch?v=jYRtFFa4hT8','https://images.unsplash.com/photo-1440404653325-ab127d49abc1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80'),
-    new Movie(3,'Movie3','https://www.youtube.com/watch?v=jYRtFFa4hT8','https://images.unsplash.com/photo-1534684686641-05569203ecca?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1632&q=80'),
-    ]
+  new Movie(
+    1,
+    "Movie1",
+    "Terror",
+    "si",
+    "https://www.youtube.com/watch?v=jYRtFFa4hT8",
+    "https://images.unsplash.com/photo-1485846234645-a62644f84728?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1459&q=80"
+  ),
+  new Movie(
+    2,
+    "Movie2",
+    "Drama",
+    "si",
+    "https://www.youtube.com/watch?v=jYRtFFa4hT8",
+    "https://images.unsplash.com/photo-1440404653325-ab127d49abc1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
+  ),
+  new Movie(
+    3,
+    "Movie3",
+    "Comedia",
+    "no",
+    "https://www.youtube.com/watch?v=jYRtFFa4hT8",
+    "https://images.unsplash.com/photo-1534684686641-05569203ecca?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1632&q=80"
+  ),
+  new Movie(
+    3,
+    "Movie3",
+    "Comedia",
+    "si",
+    "https://www.youtube.com/watch?v=jYRtFFa4hT8",
+    "https://images.unsplash.com/photo-1534684686641-05569203ecca?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1632&q=80"
+  ),
+  new Movie(
+    3,
+    "Movie3",
+    "Comedia",
+    "no",
+    "https://www.youtube.com/watch?v=jYRtFFa4hT8",
+    "https://images.unsplash.com/photo-1534684686641-05569203ecca?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1632&q=80"
+  ),
+];
 
-localStorage.setItem('moviesBase',JSON.stringify(moviesBase))
+localStorage.setItem("moviesBase", JSON.stringify(moviesBase));
 
-let moviesTable = JSON.parse(localStorage.getItem('movies'))
+let moviesTable = JSON.parse(localStorage.getItem("movies"));
+let carouselItem = document.getElementsByClassName("carousel-item");
 
+// ! hacer un array dentro de otro array
 
+//* Creación dinamica de pcategorías y películas
 
-let carouselItem = document.getElementsByClassName("carousel-item")
+let categories = ["Recomendadas", "Comedia", "Drama", "Terror"];
+console.log(categories);
 
+let moviesCategories = document.getElementById("categories");
+console.log(moviesCategories);
 
+for (let i = 0; i < categories.length; i++) {
+  let catTitle = document.createElement("h3");
+  let carousel = document.createElement("div");
+  catTitle.innerHTML = categories[i];
+  catTitle.classList.add("lista-imagenes", "mt-3", "mb-1");
+  carousel.id = categories[i];
+  carousel.classList.add(
+    "lista-imagenes",
+    `carousel-${categories[i]}`,
+    "d-sm-flex",
+    "carouselContainer"
+    
+  );
 
-let recommendedCarouselMovies = document.getElementById("recommendedCarouselMovies") // Llamo al div padre del corrousel
-
-let divRecommendedCarouselMovies = document.querySelectorAll(".divRecommendedMovies") // Llamo al div que contiene las peliculas
-
-if(divRecommendedCarouselMovies.length === 0){
-    let moviesPost = document.createElement('div')
-    moviesPost.classList.add("divRecommendedMovies")
-    moviesPost.innerHTML=`
-    <div class="row justify-content-start d-sm-flex flex-md-nowrap justify-content-sm-between">
-        <img src="testImage.jpg" class="movieImage col-6 col-md-2 mb-2" alt="..." />
-        <img src="testImage.jpg" class="movieImage col-6 col-md-2 mb-2" alt="..." />
-        <img src="testImage.jpg" class="movieImage col-6 col-md-2 mb-2" alt="..." />
-        <img src="testImage.jpg" class="movieImage col-6 col-md-2 mb-2" alt="..." />
-        <img src="testImage.jpg" class="movieImage col-6 col-md-2 mb-2" alt="..." />
-        <img src="testImage.jpg" class="movieImage col-6 col-md-2 mb-2" alt="..." />
-    </div>`
-    recommendedCarouselMovies.appendChild(moviesPost)
+  moviesCategories.appendChild(catTitle);
+  moviesCategories.appendChild(carousel);
 }
 
-//? Crear post de película
-// moviesBase.forEach(movies=>{
-    
+let com = document.querySelector(".carousel-Comedia");
+let dra = document.querySelector(".carousel-Drama");
+let ter = document.querySelector(".carousel-Terror");
+let rec = document.querySelector(".carousel-Recomendadas");
+
+console.log(com);
+console.log(dra);
+console.log(ter);
+
+//? Llenar de peliculas
+for (let j = 0; j < moviesBase.length; j++) {
+  console.log(moviesBase[j].recomended);
+  if (moviesBase[j].recomended === "si") {
+    let movieFilm = document.createElement("img");
+    movieFilm.classList.add("movieImage", "mx-2", "mb-2");
+    movieFilm.setAttribute("src", `${moviesBase[j].urlImage}`);
+
+    rec.appendChild(movieFilm);
+  }
+  if (moviesBase[j].categories === "Comedia") {
+    let movieFilm = document.createElement("img");
+    movieFilm.classList.add("movieImage", "mx-2", "mb-2");
+    movieFilm.setAttribute("src", `${moviesBase[j].urlImage}`);
+
+    com.appendChild(movieFilm);
+  }
+  if (moviesBase[j].categories === "Drama") {
+    let movieFilm = document.createElement("img");
+    movieFilm.classList.add("movieImage", "mx-2", "mb-2");
+    movieFilm.setAttribute("src", `${moviesBase[j].urlImage}`);
+
+    dra.appendChild(movieFilm);
+  }
+  if (moviesBase[j].categories === "Terror") {
+    let movieFilm = document.createElement("img");
+    movieFilm.classList.add("movieImage", "mx-2", "mb-2");
+    movieFilm.setAttribute("src", `${moviesBase[j].urlImage}`);
+
+    ter.appendChild(movieFilm);
+  }
+}
+let asd = document.querySelectorAll(".movieImage");
+console.log(asd);
+
 // //* Aca tengo que agregar el detailPage
 
 // })
 
-
-
-console.log(recommendedCarouselMovies.length)
-console.log(divRecommendedCarouselMovies.length)
-
 // IDENTIFICAMOS SI EL USUARIO ES ADMIN O NO
-let userId = localStorage.getItem('user');
-console.log(userId);
-let users = JSON.parse(localStorage.getItem('users'));
-users = JSON.parse(localStorage.getItem('users'));
-console.log(users);
-let userActive = users.find(user=>user.id==userId);
-console.log(userActive);
-if(userActive.admin){
-let adminButton = document.createElement('li');
-adminButton.classList.add('nav-item');
-adminButton.innerHTML=`
+let userId = localStorage.getItem("user");
+// console.log(userId);
+let users = JSON.parse(localStorage.getItem("users"));
+users = JSON.parse(localStorage.getItem("users"));
+// console.log(users);
+let userActive = users.find((user) => user.id == userId);
+// console.log(userActive);
+if (userActive.admin) {
+  let adminButton = document.createElement("li");
+  adminButton.classList.add("nav-item");
+  adminButton.innerHTML = `
 <a class="nav-link" href="http://127.0.0.1:5500/admin.html">Administración</a>`;
-document.getElementById('options-header').appendChild(adminButton)
+  document.getElementById("options-header").appendChild(adminButton);
 }
