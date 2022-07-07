@@ -39,8 +39,6 @@ body {
   color: white;
   text-shadow: 2px 2px 2px black;
 }
-
-
 .footer-list {
     padding-left: 0px;
     padding-right: 25px;
@@ -49,7 +47,6 @@ body {
 .rm-mq-desc {
     visibility: hidden;
 }
-
 .rm-description,
 .rm-text {
   display: block;
@@ -127,5 +124,4 @@ body {
     visibility: visible;
   }
 }
-
 
