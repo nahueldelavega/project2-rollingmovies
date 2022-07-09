@@ -2,7 +2,7 @@ let movie = document.getElementById("movie")
 console.log(movie)
 
 let moviesBase = JSON.parse(localStorage.getItem("moviesBase"))
-console.log(moviesBase[0])
+console.log(moviesBase)
 
 function completeMovie(){
     let title = document.createElement('h1');
