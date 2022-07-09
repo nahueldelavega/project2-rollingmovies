@@ -21,32 +21,8 @@ let moviesBase = [
 
 localStorage.setItem('moviesBase',JSON.stringify(moviesBase))
 
-let moviesTable = JSON.parse(localStorage.getItem('movies'))
+let moviesTable = JSON.parse(localStorage.getItem('moviesBase'))
 
-
-
-let carouselItem = document.getElementsByClassName("carousel-item")
-
-
-
-let recommendedCarouselMovies = document.getElementById("recommendedCarouselMovies") // Llamo al div padre del corrousel
-
-let divRecommendedCarouselMovies = document.querySelectorAll(".divRecommendedMovies") // Llamo al div que contiene las peliculas
-
-if(divRecommendedCarouselMovies.length === 0){
-    let moviesPost = document.createElement('div')
-    moviesPost.classList.add("divRecommendedMovies")
-    moviesPost.innerHTML=`
-    <div class="row justify-content-start d-sm-flex flex-md-nowrap justify-content-sm-between">
-        <img src="testImage.jpg" class="movieImage col-6 col-md-2 mb-2" alt="..." />
-        <img src="testImage.jpg" class="movieImage col-6 col-md-2 mb-2" alt="..." />
-        <img src="testImage.jpg" class="movieImage col-6 col-md-2 mb-2" alt="..." />
-        <img src="testImage.jpg" class="movieImage col-6 col-md-2 mb-2" alt="..." />
-        <img src="testImage.jpg" class="movieImage col-6 col-md-2 mb-2" alt="..." />
-        <img src="testImage.jpg" class="movieImage col-6 col-md-2 mb-2" alt="..." />
-    </div>`
-    recommendedCarouselMovies.appendChild(moviesPost)
-}
 
 //? Crear post de película
 // moviesBase.forEach(movies=>{
@@ -57,16 +33,15 @@ if(divRecommendedCarouselMovies.length === 0){
 
 
 
-console.log(recommendedCarouselMovies.length)
-console.log(divRecommendedCarouselMovies.length)
+// console.log(recommendedCarouselMovies.length)
+// console.log(divRecommendedCarouselMovies.length)
 
 // IDENTIFICAMOS SI EL USUARIO ES ADMIN O NO
 let userId = localStorage.getItem('user');
 console.log(userId);
-let users = JSON.parse(localStorage.getItem('users'));
-users = JSON.parse(localStorage.getItem('users'));
-console.log(users);
-let userActive = users.find(user=>user.id==userId);
+let usersFromLS = JSON.parse(localStorage.getItem('users'));
+console.log(usersFromLS);
+let userActive = usersFromLS.find(user=>user.id==userId);
 console.log(userActive);
 if(userActive.admin){
 let adminButton = document.createElement('li');
