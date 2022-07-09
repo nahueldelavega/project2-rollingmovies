@@ -39,8 +39,6 @@ body {
   color: white;
   text-shadow: 2px 2px 2px black;
 }
-
-
 .footer-list {
     padding-left: 0px;
     padding-right: 25px;
@@ -49,7 +47,6 @@ body {
 .rm-mq-desc {
     visibility: hidden;
 }
-
 .rm-description,
 .rm-text {
   display: block;
@@ -91,5 +88,40 @@ body {
     visibility: visible;
   }
 }
+@media only screen and (min-width: 450px) and (max-width: 770px) {
+  .rm-description,
+  .rm-text {
+    display: none;
+  }
+  body {
+    background-image: url(/assets/bf-red-landing2.jpg);
+    background-size: cover;
+  }
+  .footer {
+    display: flex;
+    justify-content: center;
+    font-size: 15px;
+  }
 
+  .rm-mq-desc {
+    color: white;
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    top: 35vh;
+    text-shadow: 2px 1px 1px black;
+    visibility: visible;
+  }
+  .rm-mq-text {
+    color: white;
+    font-size: 65px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    top: 35vh;
+    text-shadow: 2px 1px 1px black;
+    visibility: visible;
+  }
+}
 
