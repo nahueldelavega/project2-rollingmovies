@@ -3,139 +3,147 @@ if (!localStorage.getItem("userLogged")) {
 }
 
 class Movie {
-    constructor(id, name, categories,featured, recomended,description, urlVideo, urlImage) {
-      this.id = id;
-      this.name = name;
-      this.categories = categories;
-      this.featured = featured;
-      this.recomended = recomended;
-      this.description = description;
-      this.urlVideo = urlVideo;
-      this.urlImage = urlImage;
-    }
+  constructor(
+    id,
+    name,
+    categories,
+    featured,
+    recomended,
+    description,
+    urlVideo,
+    urlImage
+  ) {
+    this.id = id;
+    this.name = name;
+    this.categories = categories;
+    this.featured = featured;
+    this.recomended = recomended;
+    this.description = description;
+    this.urlVideo = urlVideo;
+    this.urlImage = urlImage;
   }
+}
 
-  let moviesBase;
-  let moviesFromLS = JSON.parse(localStorage.getItem("moviesBase"));
+let moviesBase;
+let moviesFromLS = JSON.parse(localStorage.getItem("moviesBase"));
 
-
-  if(moviesFromLS){
-    moviesBase = moviesFromLS;
-  }else{
-    moviesBase = [
-      new Movie(
-        1,
-        "Movie1",
-        "Terror",
-        "si",
-        "si",
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam pellentesque arcu dolor. Cras ut ipsum sagittis, viverra erat in, maximus leo. Aenean fringilla ligula vel tincidunt pharetra. Vivamus accumsan egestas tortor sed tincidunt. Suspendisse eu felis et ipsum viverra elementum eu porta mi. Cras sem ante, sollicitudin ac ante at, accumsan faucibus nisl. Fusce commodo eu eros sit amet molestie. Mauris at aliquet magna. Morbi tincidunt faucibus efficitur. Donec interdum neque neque, sit amet gravida lacus pharetra finibus. Morbi a convallis massa. Quisque finibus mauris quis urna elementum porttitor. Integer commodo dui dolor, eu viverra est sagittis quis. Phasellus elementum pretium aliquam. Duis rutrum magna sem. Ut a tristique ex.",
-        "https://www.youtube.com/watch?v=jYRtFFa4hT8",
-        "https://images.unsplash.com/photo-1485846234645-a62644f84728?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1459&q=80"
-      ),
-      new Movie(
-        2,
-        "Movie2",
-        "Drama",
-        "si",
-        "si",
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam pellentesque arcu dolor. Cras ut ipsum sagittis, viverra erat in, maximus leo. Aenean fringilla ligula vel tincidunt pharetra. Vivamus accumsan egestas tortor sed tincidunt. Suspendisse eu felis et ipsum viverra elementum eu porta mi. Cras sem ante, sollicitudin ac ante at, accumsan faucibus nisl. Fusce commodo eu eros sit amet molestie. Mauris at aliquet magna. Morbi tincidunt faucibus efficitur. Donec interdum neque neque, sit amet gravida lacus pharetra finibus. Morbi a convallis massa. Quisque finibus mauris quis urna elementum porttitor. Integer commodo dui dolor, eu viverra est sagittis quis. Phasellus elementum pretium aliquam. Duis rutrum magna sem. Ut a tristique ex.",
-        "https://www.youtube.com/watch?v=jYRtFFa4hT8",
-        "https://images.unsplash.com/photo-1440404653325-ab127d49abc1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
-      ),
-      new Movie(
-        3,
-        "Movie3",
-        "Comedia",
-        "no",
-        "no",
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam pellentesque arcu dolor. Cras ut ipsum sagittis, viverra erat in, maximus leo. Aenean fringilla ligula vel tincidunt pharetra. Vivamus accumsan egestas tortor sed tincidunt. Suspendisse eu felis et ipsum viverra elementum eu porta mi. Cras sem ante, sollicitudin ac ante at, accumsan faucibus nisl. Fusce commodo eu eros sit amet molestie. Mauris at aliquet magna. Morbi tincidunt faucibus efficitur. Donec interdum neque neque, sit amet gravida lacus pharetra finibus. Morbi a convallis massa. Quisque finibus mauris quis urna elementum porttitor. Integer commodo dui dolor, eu viverra est sagittis quis. Phasellus elementum pretium aliquam. Duis rutrum magna sem. Ut a tristique ex.",
-        "https://www.youtube.com/watch?v=jYRtFFa4hT8",
-        "https://images.unsplash.com/photo-1534684686641-05569203ecca?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1632&q=80"
-      ),
-      new Movie(
-        4,
-        "Movie3",
-        "Comedia",
-        "no",
-        "si",
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam pellentesque arcu dolor. Cras ut ipsum sagittis, viverra erat in, maximus leo. Aenean fringilla ligula vel tincidunt pharetra. Vivamus accumsan egestas tortor sed tincidunt. Suspendisse eu felis et ipsum viverra elementum eu porta mi. Cras sem ante, sollicitudin ac ante at, accumsan faucibus nisl. Fusce commodo eu eros sit amet molestie. Mauris at aliquet magna. Morbi tincidunt faucibus efficitur. Donec interdum neque neque, sit amet gravida lacus pharetra finibus. Morbi a convallis massa. Quisque finibus mauris quis urna elementum porttitor. Integer commodo dui dolor, eu viverra est sagittis quis. Phasellus elementum pretium aliquam. Duis rutrum magna sem. Ut a tristique ex.",
-        "https://www.youtube.com/watch?v=jYRtFFa4hT8",
-        "https://images.unsplash.com/photo-1534684686641-05569203ecca?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1632&q=80"
-      ),
-      new Movie(
-        5,
-        "Movie3",
-        "Comedia",
-        "no",
-        "si",
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam pellentesque arcu dolor. Cras ut ipsum sagittis, viverra erat in, maximus leo. Aenean fringilla ligula vel tincidunt pharetra. Vivamus accumsan egestas tortor sed tincidunt. Suspendisse eu felis et ipsum viverra elementum eu porta mi. Cras sem ante, sollicitudin ac ante at, accumsan faucibus nisl. Fusce commodo eu eros sit amet molestie. Mauris at aliquet magna. Morbi tincidunt faucibus efficitur. Donec interdum neque neque, sit amet gravida lacus pharetra finibus. Morbi a convallis massa. Quisque finibus mauris quis urna elementum porttitor. Integer commodo dui dolor, eu viverra est sagittis quis. Phasellus elementum pretium aliquam. Duis rutrum magna sem. Ut a tristique ex.",
-        "https://www.youtube.com/watch?v=jYRtFFa4hT8",
-        "https://images.unsplash.com/photo-1534684686641-05569203ecca?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1632&q=80"
-      ),
-      new Movie(
-        6,
-        "Movie3",
-        "Comedia",
-        "no",
-        "si",
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam pellentesque arcu dolor. Cras ut ipsum sagittis, viverra erat in, maximus leo. Aenean fringilla ligula vel tincidunt pharetra. Vivamus accumsan egestas tortor sed tincidunt. Suspendisse eu felis et ipsum viverra elementum eu porta mi. Cras sem ante, sollicitudin ac ante at, accumsan faucibus nisl. Fusce commodo eu eros sit amet molestie. Mauris at aliquet magna. Morbi tincidunt faucibus efficitur. Donec interdum neque neque, sit amet gravida lacus pharetra finibus. Morbi a convallis massa. Quisque finibus mauris quis urna elementum porttitor. Integer commodo dui dolor, eu viverra est sagittis quis. Phasellus elementum pretium aliquam. Duis rutrum magna sem. Ut a tristique ex.",
-        "https://www.youtube.com/watch?v=jYRtFFa4hT8",
-        "https://images.unsplash.com/photo-1534684686641-05569203ecca?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1632&q=80"
-      ),
-      new Movie(
-        7,
-        "Movie3",
-        "Comedia",
-        "no",
-        "si",
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam pellentesque arcu dolor. Cras ut ipsum sagittis, viverra erat in, maximus leo. Aenean fringilla ligula vel tincidunt pharetra. Vivamus accumsan egestas tortor sed tincidunt. Suspendisse eu felis et ipsum viverra elementum eu porta mi. Cras sem ante, sollicitudin ac ante at, accumsan faucibus nisl. Fusce commodo eu eros sit amet molestie. Mauris at aliquet magna. Morbi tincidunt faucibus efficitur. Donec interdum neque neque, sit amet gravida lacus pharetra finibus. Morbi a convallis massa. Quisque finibus mauris quis urna elementum porttitor. Integer commodo dui dolor, eu viverra est sagittis quis. Phasellus elementum pretium aliquam. Duis rutrum magna sem. Ut a tristique ex.",
-        "https://www.youtube.com/watch?v=jYRtFFa4hT8",
-        "https://images.unsplash.com/photo-1534684686641-05569203ecca?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1632&q=80"
-      ),
-      new Movie(
-        8,
-        "Movie3",
-        "Comedia",
-        "no",
-        "si",
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam pellentesque arcu dolor. Cras ut ipsum sagittis, viverra erat in, maximus leo. Aenean fringilla ligula vel tincidunt pharetra. Vivamus accumsan egestas tortor sed tincidunt. Suspendisse eu felis et ipsum viverra elementum eu porta mi. Cras sem ante, sollicitudin ac ante at, accumsan faucibus nisl. Fusce commodo eu eros sit amet molestie. Mauris at aliquet magna. Morbi tincidunt faucibus efficitur. Donec interdum neque neque, sit amet gravida lacus pharetra finibus. Morbi a convallis massa. Quisque finibus mauris quis urna elementum porttitor. Integer commodo dui dolor, eu viverra est sagittis quis. Phasellus elementum pretium aliquam. Duis rutrum magna sem. Ut a tristique ex.",
-        "https://www.youtube.com/watch?v=jYRtFFa4hT8",
-        "https://images.unsplash.com/photo-1534684686641-05569203ecca?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1632&q=80"
-      ),
-      new Movie(
-        9,
-        "Movie3",
-        "Comedia",
-        "no",
-        "no",
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam pellentesque arcu dolor. Cras ut ipsum sagittis, viverra erat in, maximus leo. Aenean fringilla ligula vel tincidunt pharetra. Vivamus accumsan egestas tortor sed tincidunt. Suspendisse eu felis et ipsum viverra elementum eu porta mi. Cras sem ante, sollicitudin ac ante at, accumsan faucibus nisl. Fusce commodo eu eros sit amet molestie. Mauris at aliquet magna. Morbi tincidunt faucibus efficitur. Donec interdum neque neque, sit amet gravida lacus pharetra finibus. Morbi a convallis massa. Quisque finibus mauris quis urna elementum porttitor. Integer commodo dui dolor, eu viverra est sagittis quis. Phasellus elementum pretium aliquam. Duis rutrum magna sem. Ut a tristique ex.",
-        "https://www.youtube.com/watch?v=jYRtFFa4hT8",
-        "https://images.unsplash.com/photo-1534684686641-05569203ecca?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1632&q=80"
-      ),
-      new Movie(
-        10,
-        "Movie3",
-        "Comedia",
-        "si",
-        "si",
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam pellentesque arcu dolor. Cras ut ipsum sagittis, viverra erat in, maximus leo. Aenean fringilla ligula vel tincidunt pharetra. Vivamus accumsan egestas tortor sed tincidunt. Suspendisse eu felis et ipsum viverra elementum eu porta mi. Cras sem ante, sollicitudin ac ante at, accumsan faucibus nisl. Fusce commodo eu eros sit amet molestie. Mauris at aliquet magna. Morbi tincidunt faucibus efficitur. Donec interdum neque neque, sit amet gravida lacus pharetra finibus. Morbi a convallis massa. Quisque finibus mauris quis urna elementum porttitor. Integer commodo dui dolor, eu viverra est sagittis quis. Phasellus elementum pretium aliquam. Duis rutrum magna sem. Ut a tristique ex.",
-        "https://www.youtube.com/watch?v=jYRtFFa4hT8",
-        "https://images.unsplash.com/photo-1534684686641-05569203ecca?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1632&q=80"
-      ),
-      new Movie(
-        11,
-        "Movie3",
-        "Comedia",
-        "no",
-        "no",
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam pellentesque arcu dolor. Cras ut ipsum sagittis, viverra erat in, maximus leo. Aenean fringilla ligula vel tincidunt pharetra. Vivamus accumsan egestas tortor sed tincidunt. Suspendisse eu felis et ipsum viverra elementum eu porta mi. Cras sem ante, sollicitudin ac ante at, accumsan faucibus nisl. Fusce commodo eu eros sit amet molestie. Mauris at aliquet magna. Morbi tincidunt faucibus efficitur. Donec interdum neque neque, sit amet gravida lacus pharetra finibus. Morbi a convallis massa. Quisque finibus mauris quis urna elementum porttitor. Integer commodo dui dolor, eu viverra est sagittis quis. Phasellus elementum pretium aliquam. Duis rutrum magna sem. Ut a tristique ex.",
-        "https://www.youtube.com/watch?v=jYRtFFa4hT8",
-        "https://images.unsplash.com/photo-1534684686641-05569203ecca?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1632&q=80"
-      ),
-    ];
-    localStorage.setItem("moviesBase",JSON.stringify(moviesFromLS));
-  }
+if (moviesFromLS) {
+  moviesBase = moviesFromLS;
+} else {
+  moviesBase = [
+    new Movie(
+      1,
+      "Movie1",
+      "Terror",
+      "si",
+      "si",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam pellentesque arcu dolor. Cras ut ipsum sagittis, viverra erat in, maximus leo. Aenean fringilla ligula vel tincidunt pharetra. Vivamus accumsan egestas tortor sed tincidunt. Suspendisse eu felis et ipsum viverra elementum eu porta mi. Cras sem ante, sollicitudin ac ante at, accumsan faucibus nisl. Fusce commodo eu eros sit amet molestie. Mauris at aliquet magna. Morbi tincidunt faucibus efficitur. Donec interdum neque neque, sit amet gravida lacus pharetra finibus. Morbi a convallis massa. Quisque finibus mauris quis urna elementum porttitor. Integer commodo dui dolor, eu viverra est sagittis quis. Phasellus elementum pretium aliquam. Duis rutrum magna sem. Ut a tristique ex.",
+      "https://www.youtube.com/watch?v=jYRtFFa4hT8",
+      "https://images.unsplash.com/photo-1485846234645-a62644f84728?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1459&q=80"
+    ),
+    new Movie(
+      2,
+      "Movie2",
+      "Drama",
+      "si",
+      "si",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam pellentesque arcu dolor. Cras ut ipsum sagittis, viverra erat in, maximus leo. Aenean fringilla ligula vel tincidunt pharetra. Vivamus accumsan egestas tortor sed tincidunt. Suspendisse eu felis et ipsum viverra elementum eu porta mi. Cras sem ante, sollicitudin ac ante at, accumsan faucibus nisl. Fusce commodo eu eros sit amet molestie. Mauris at aliquet magna. Morbi tincidunt faucibus efficitur. Donec interdum neque neque, sit amet gravida lacus pharetra finibus. Morbi a convallis massa. Quisque finibus mauris quis urna elementum porttitor. Integer commodo dui dolor, eu viverra est sagittis quis. Phasellus elementum pretium aliquam. Duis rutrum magna sem. Ut a tristique ex.",
+      "https://www.youtube.com/watch?v=jYRtFFa4hT8",
+      "https://images.unsplash.com/photo-1440404653325-ab127d49abc1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
+    ),
+    new Movie(
+      3,
+      "Movie3",
+      "Comedia",
+      "no",
+      "no",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam pellentesque arcu dolor. Cras ut ipsum sagittis, viverra erat in, maximus leo. Aenean fringilla ligula vel tincidunt pharetra. Vivamus accumsan egestas tortor sed tincidunt. Suspendisse eu felis et ipsum viverra elementum eu porta mi. Cras sem ante, sollicitudin ac ante at, accumsan faucibus nisl. Fusce commodo eu eros sit amet molestie. Mauris at aliquet magna. Morbi tincidunt faucibus efficitur. Donec interdum neque neque, sit amet gravida lacus pharetra finibus. Morbi a convallis massa. Quisque finibus mauris quis urna elementum porttitor. Integer commodo dui dolor, eu viverra est sagittis quis. Phasellus elementum pretium aliquam. Duis rutrum magna sem. Ut a tristique ex.",
+      "https://www.youtube.com/watch?v=jYRtFFa4hT8",
+      "https://images.unsplash.com/photo-1534684686641-05569203ecca?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1632&q=80"
+    ),
+    new Movie(
+      4,
+      "Movie3",
+      "Comedia",
+      "no",
+      "si",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam pellentesque arcu dolor. Cras ut ipsum sagittis, viverra erat in, maximus leo. Aenean fringilla ligula vel tincidunt pharetra. Vivamus accumsan egestas tortor sed tincidunt. Suspendisse eu felis et ipsum viverra elementum eu porta mi. Cras sem ante, sollicitudin ac ante at, accumsan faucibus nisl. Fusce commodo eu eros sit amet molestie. Mauris at aliquet magna. Morbi tincidunt faucibus efficitur. Donec interdum neque neque, sit amet gravida lacus pharetra finibus. Morbi a convallis massa. Quisque finibus mauris quis urna elementum porttitor. Integer commodo dui dolor, eu viverra est sagittis quis. Phasellus elementum pretium aliquam. Duis rutrum magna sem. Ut a tristique ex.",
+      "https://www.youtube.com/watch?v=jYRtFFa4hT8",
+      "https://images.unsplash.com/photo-1534684686641-05569203ecca?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1632&q=80"
+    ),
+    new Movie(
+      5,
+      "Movie3",
+      "Comedia",
+      "no",
+      "si",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam pellentesque arcu dolor. Cras ut ipsum sagittis, viverra erat in, maximus leo. Aenean fringilla ligula vel tincidunt pharetra. Vivamus accumsan egestas tortor sed tincidunt. Suspendisse eu felis et ipsum viverra elementum eu porta mi. Cras sem ante, sollicitudin ac ante at, accumsan faucibus nisl. Fusce commodo eu eros sit amet molestie. Mauris at aliquet magna. Morbi tincidunt faucibus efficitur. Donec interdum neque neque, sit amet gravida lacus pharetra finibus. Morbi a convallis massa. Quisque finibus mauris quis urna elementum porttitor. Integer commodo dui dolor, eu viverra est sagittis quis. Phasellus elementum pretium aliquam. Duis rutrum magna sem. Ut a tristique ex.",
+      "https://www.youtube.com/watch?v=jYRtFFa4hT8",
+      "https://images.unsplash.com/photo-1534684686641-05569203ecca?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1632&q=80"
+    ),
+    new Movie(
+      6,
+      "Movie3",
+      "Comedia",
+      "no",
+      "si",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam pellentesque arcu dolor. Cras ut ipsum sagittis, viverra erat in, maximus leo. Aenean fringilla ligula vel tincidunt pharetra. Vivamus accumsan egestas tortor sed tincidunt. Suspendisse eu felis et ipsum viverra elementum eu porta mi. Cras sem ante, sollicitudin ac ante at, accumsan faucibus nisl. Fusce commodo eu eros sit amet molestie. Mauris at aliquet magna. Morbi tincidunt faucibus efficitur. Donec interdum neque neque, sit amet gravida lacus pharetra finibus. Morbi a convallis massa. Quisque finibus mauris quis urna elementum porttitor. Integer commodo dui dolor, eu viverra est sagittis quis. Phasellus elementum pretium aliquam. Duis rutrum magna sem. Ut a tristique ex.",
+      "https://www.youtube.com/watch?v=jYRtFFa4hT8",
+      "https://images.unsplash.com/photo-1534684686641-05569203ecca?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1632&q=80"
+    ),
+    new Movie(
+      7,
+      "Movie3",
+      "Comedia",
+      "no",
+      "si",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam pellentesque arcu dolor. Cras ut ipsum sagittis, viverra erat in, maximus leo. Aenean fringilla ligula vel tincidunt pharetra. Vivamus accumsan egestas tortor sed tincidunt. Suspendisse eu felis et ipsum viverra elementum eu porta mi. Cras sem ante, sollicitudin ac ante at, accumsan faucibus nisl. Fusce commodo eu eros sit amet molestie. Mauris at aliquet magna. Morbi tincidunt faucibus efficitur. Donec interdum neque neque, sit amet gravida lacus pharetra finibus. Morbi a convallis massa. Quisque finibus mauris quis urna elementum porttitor. Integer commodo dui dolor, eu viverra est sagittis quis. Phasellus elementum pretium aliquam. Duis rutrum magna sem. Ut a tristique ex.",
+      "https://www.youtube.com/watch?v=jYRtFFa4hT8",
+      "https://images.unsplash.com/photo-1534684686641-05569203ecca?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1632&q=80"
+    ),
+    new Movie(
+      8,
+      "Movie3",
+      "Comedia",
+      "no",
+      "si",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam pellentesque arcu dolor. Cras ut ipsum sagittis, viverra erat in, maximus leo. Aenean fringilla ligula vel tincidunt pharetra. Vivamus accumsan egestas tortor sed tincidunt. Suspendisse eu felis et ipsum viverra elementum eu porta mi. Cras sem ante, sollicitudin ac ante at, accumsan faucibus nisl. Fusce commodo eu eros sit amet molestie. Mauris at aliquet magna. Morbi tincidunt faucibus efficitur. Donec interdum neque neque, sit amet gravida lacus pharetra finibus. Morbi a convallis massa. Quisque finibus mauris quis urna elementum porttitor. Integer commodo dui dolor, eu viverra est sagittis quis. Phasellus elementum pretium aliquam. Duis rutrum magna sem. Ut a tristique ex.",
+      "https://www.youtube.com/watch?v=jYRtFFa4hT8",
+      "https://images.unsplash.com/photo-1534684686641-05569203ecca?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1632&q=80"
+    ),
+    new Movie(
+      9,
+      "Movie3",
+      "Comedia",
+      "no",
+      "no",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam pellentesque arcu dolor. Cras ut ipsum sagittis, viverra erat in, maximus leo. Aenean fringilla ligula vel tincidunt pharetra. Vivamus accumsan egestas tortor sed tincidunt. Suspendisse eu felis et ipsum viverra elementum eu porta mi. Cras sem ante, sollicitudin ac ante at, accumsan faucibus nisl. Fusce commodo eu eros sit amet molestie. Mauris at aliquet magna. Morbi tincidunt faucibus efficitur. Donec interdum neque neque, sit amet gravida lacus pharetra finibus. Morbi a convallis massa. Quisque finibus mauris quis urna elementum porttitor. Integer commodo dui dolor, eu viverra est sagittis quis. Phasellus elementum pretium aliquam. Duis rutrum magna sem. Ut a tristique ex.",
+      "https://www.youtube.com/watch?v=jYRtFFa4hT8",
+      "https://images.unsplash.com/photo-1534684686641-05569203ecca?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1632&q=80"
+    ),
+    new Movie(
+      10,
+      "Movie3",
+      "Comedia",
+      "si",
+      "si",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam pellentesque arcu dolor. Cras ut ipsum sagittis, viverra erat in, maximus leo. Aenean fringilla ligula vel tincidunt pharetra. Vivamus accumsan egestas tortor sed tincidunt. Suspendisse eu felis et ipsum viverra elementum eu porta mi. Cras sem ante, sollicitudin ac ante at, accumsan faucibus nisl. Fusce commodo eu eros sit amet molestie. Mauris at aliquet magna. Morbi tincidunt faucibus efficitur. Donec interdum neque neque, sit amet gravida lacus pharetra finibus. Morbi a convallis massa. Quisque finibus mauris quis urna elementum porttitor. Integer commodo dui dolor, eu viverra est sagittis quis. Phasellus elementum pretium aliquam. Duis rutrum magna sem. Ut a tristique ex.",
+      "https://www.youtube.com/watch?v=jYRtFFa4hT8",
+      "https://images.unsplash.com/photo-1534684686641-05569203ecca?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1632&q=80"
+    ),
+    new Movie(
+      11,
+      "Movie3",
+      "Comedia",
+      "no",
+      "no",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam pellentesque arcu dolor. Cras ut ipsum sagittis, viverra erat in, maximus leo. Aenean fringilla ligula vel tincidunt pharetra. Vivamus accumsan egestas tortor sed tincidunt. Suspendisse eu felis et ipsum viverra elementum eu porta mi. Cras sem ante, sollicitudin ac ante at, accumsan faucibus nisl. Fusce commodo eu eros sit amet molestie. Mauris at aliquet magna. Morbi tincidunt faucibus efficitur. Donec interdum neque neque, sit amet gravida lacus pharetra finibus. Morbi a convallis massa. Quisque finibus mauris quis urna elementum porttitor. Integer commodo dui dolor, eu viverra est sagittis quis. Phasellus elementum pretium aliquam. Duis rutrum magna sem. Ut a tristique ex.",
+      "https://www.youtube.com/watch?v=jYRtFFa4hT8",
+      "https://images.unsplash.com/photo-1534684686641-05569203ecca?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1632&q=80"
+    ),
+  ];
+  localStorage.setItem("moviesBase", JSON.stringify(moviesFromLS));
+}
 
 //* Creacion dinamica de destacadas
 
@@ -170,7 +178,8 @@ moviesFromLS.forEach((movie) => {
   <div class="card-img-overlay d-flex  flex-column ">
     <div class="my-auto overflow-auto d-flex flex-column align-items-start mb-0">
       <h5 class="card-title">${movie.name}</h5>
-      <button type="button" class="btn-play my-3">Reproducir</button>
+      <form action="/error404.html">
+      <button type="button" class="btn-play my-3">Reproducir</button></form>
       <p class="card-text fs-7 text-description">${movie.description}
       </p>
     </div>
@@ -223,32 +232,79 @@ console.log(rec);
 for (let j = 0; j < moviesFromLS.length; j++) {
   console.log(moviesFromLS[j].recomended);
   if (moviesFromLS[j].recomended === "si") {
-    let movieFilm = document.createElement("img");
-    movieFilm.classList.add("movieImage", "mx-2", "mb-2");
-    movieFilm.setAttribute("src", `${moviesFromLS[j].urlImage}`);
-
-    rec.appendChild(movieFilm);
+    //! STEP 1: CREAR EL ELEMENTO
+    let movie = document.createElement("a");
+    movie.href = window.location.origin + "/detail.html#" + moviesFromLS[j].id;
+    //! STEP 2: DECIRLE AL ELEMENTO QUE LLEVA ADENTRO
+    //? productCard.id hace referencia al id del div que estamos creando, y product.id hace referencia al id de cada producto que se encuentra en el array
+    movie.id = moviesFromLS[j].id;
+    movie.classList.add("card", "my-3", "me-2");
+    movie.style.width = "18rem";
+    movie.innerHTML = `
+  <img src=${moviesFromLS[j].urlImage} class="movieImage card-img-top customize-image" alt=${moviesFromLS[j].name}>
+  <!-- <div class="card-body p-2">
+    <h5 class="card-title bg-transparent">${moviesFromLS[j].name}</h5>
+  </div> -->
+  `;
+    rec.appendChild(movie);
   }
   if (moviesFromLS[j].categories === "Comedia") {
-    let movieFilm = document.createElement("img");
-    movieFilm.classList.add("movieImage", "mx-2", "mb-2");
-    movieFilm.setAttribute("src", `${moviesFromLS[j].urlImage}`);
+    // let movieFilm = document.createElement("img");
+    // movieFilm.classList.add("movieImage", "mx-2", "mb-2");
+    // movieFilm.setAttribute("src", `${moviesFromLS[j].urlImage}`);
 
-    com.appendChild(movieFilm);
+    //! STEP 1: CREAR EL ELEMENTO
+    let movie = document.createElement("a");
+    movie.href = window.location.origin + "/detail.html#" + moviesFromLS[j].id;
+    //! STEP 2: DECIRLE AL ELEMENTO QUE LLEVA ADENTRO
+    //? productCard.id hace referencia al id del div que estamos creando, y product.id hace referencia al id de cada producto que se encuentra en el array
+    movie.id = moviesFromLS[j].id;
+    movie.classList.add("card", "my-3", "me-2");
+    movie.style.width = "18rem";
+    movie.innerHTML = `
+<img src=${moviesFromLS[j].urlImage} class="movieImage card-img-top customize-image" alt=${moviesFromLS[j].name}>
+<!-- <div class="card-body p-2">
+<h5 class="card-title bg-transparent">${moviesFromLS[j].name}</h5>
+</div> -->
+`;
+
+    com.appendChild(movie);
   }
   if (moviesFromLS[j].categories === "Drama") {
-    let movieFilm = document.createElement("img");
-    movieFilm.classList.add("movieImage", "mx-2", "mb-2");
-    movieFilm.setAttribute("src", `${moviesFromLS[j].urlImage}`);
+    //! STEP 1: CREAR EL ELEMENTO
+    let movie = document.createElement("a");
+    movie.href = window.location.origin + "/detail.html#" + moviesFromLS[j].id;
+    //! STEP 2: DECIRLE AL ELEMENTO QUE LLEVA ADENTRO
+    //? productCard.id hace referencia al id del div que estamos creando, y product.id hace referencia al id de cada producto que se encuentra en el array
+    movie.id = moviesFromLS[j].id;
+    movie.classList.add("card", "my-3", "me-2");
+    movie.style.width = "18rem";
+    movie.innerHTML = `
+<img src=${moviesFromLS[j].urlImage} class="movieImage card-img-top customize-image" alt=${moviesFromLS[j].name}>
+<!-- <div class="card-body p-2">
+<h5 class="card-title bg-transparent">${moviesFromLS[j].name}</h5>
+</div> -->
+`;
 
-    dra.appendChild(movieFilm);
+    dra.appendChild(movie);
   }
   if (moviesFromLS[j].categories === "Terror") {
-    let movieFilm = document.createElement("img");
-    movieFilm.classList.add("movieImage", "mx-2", "mb-2");
-    movieFilm.setAttribute("src", `${moviesFromLS[j].urlImage}`);
+   //! STEP 1: CREAR EL ELEMENTO
+   let movie = document.createElement("a");
+   movie.href = window.location.origin + "/detail.html#" + moviesFromLS[j].id;
+   //! STEP 2: DECIRLE AL ELEMENTO QUE LLEVA ADENTRO
+   //? productCard.id hace referencia al id del div que estamos creando, y product.id hace referencia al id de cada producto que se encuentra en el array
+   movie.id = moviesFromLS[j].id;
+   movie.classList.add("card", "my-3", "me-2");
+   movie.style.width = "18rem";
+   movie.innerHTML = `
+<img src=${moviesFromLS[j].urlImage} class="movieImage card-img-top customize-image" alt=${moviesFromLS[j].name}>
+<!-- <div class="card-body p-2">
+<h5 class="card-title bg-transparent">${moviesFromLS[j].name}</h5>
+</div> -->
+`;
 
-    ter.appendChild(movieFilm);
+    ter.appendChild(movie);
   }
 }
 
@@ -268,6 +324,6 @@ if (userActive.admin) {
   adminButton.classList.add("nav-item");
   adminButton.innerHTML = `
 <a class="nav-link" href="/admin.html">Administración</a>`;
-adminButton.classList.add("d-flex", "justify-content-end")
+  adminButton.classList.add("d-flex", "justify-content-end");
   document.getElementById("options-header").appendChild(adminButton);
 }
