@@ -117,18 +117,18 @@ function errorAlert (texto){
   },3000)
 }
 
-// IDENTIFICAMOS SI EL USUARIO ES ADMIN O NO
-let userId = localStorage.getItem('user');
-console.log(userId);
-users = JSON.parse(localStorage.getItem('users'));
-console.log(users);
-let userActive = users.find(user=>user.id==userId);
-console.log(userActive);
-if(userActive.admin){
-  let adminButton = document.createElement('li');
-  adminButton.classList.add('nav-item');
-  adminButton.innerHTML=`
-  <a class="nav-link" href="http://127.0.0.1:5500/admin.html">Administración</a>
-  `;
-  document.getElementById('options-header').appendChild(adminButton)
-}
+// // IDENTIFICAMOS SI EL USUARIO ES ADMIN O NO
+// let userId = localStorage.getItem('user');
+// console.log(userId);
+// users = JSON.parse(localStorage.getItem('users'));
+// console.log(users);
+// let userActive = users.find(user=>user.id==userId);
+// console.log(userActive);
+// if(userActive.admin){
+//   let adminButton = document.createElement('li');
+//   adminButton.classList.add('nav-item');
+//   adminButton.innerHTML=`
+//   <a class="nav-link" href="http://127.0.0.1:5500/admin.html">Administración</a>
+//   `;
+//   document.getElementById('options-header').appendChild(adminButton)
+// }
