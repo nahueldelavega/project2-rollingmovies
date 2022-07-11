@@ -267,7 +267,7 @@ if (userActive.admin) {
   let adminButton = document.createElement("li");
   adminButton.classList.add("nav-item");
   adminButton.innerHTML = `
-<a class="nav-link" href="http://127.0.0.1:5500/admin.html">Administración</a>`;
+<a class="nav-link" href="/admin.html">Administración</a>`;
 adminButton.classList.add("d-flex", "justify-content-end")
   document.getElementById("options-header").appendChild(adminButton);
 }
