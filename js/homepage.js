@@ -175,11 +175,10 @@ moviesFromLS.forEach((movie) => {
       allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
       allowfullscreen class = "w-100 mainImage"
     ></iframe>
-  <div class="card-img-overlay d-flex  flex-column ">
+  <div class="card-img-overlay card-carousel-movie d-flex flex-column m-lg-auto ">
     <div class="my-auto overflow-auto d-flex flex-column align-items-start mb-0">
       <h5 class="card-title">${movie.name}</h5>
-      <form action="/error404.html">
-      <button type="button" class="btn-play my-3">Reproducir</button></form>
+      <button type="button" class="btn-play my-3" onclick="window.location.assign(window.location.origin+'/error404.html')">Reproducir</button>
       <p class="card-text fs-7 text-description">${movie.description}
       </p>
     </div>
