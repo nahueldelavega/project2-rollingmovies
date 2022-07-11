@@ -23,7 +23,7 @@
       class="navbar navbar-expand-lg bg-transparent position-static top-0 p-0"
     >
       <div class="container-fluid navbar-color p-1">
-        <a class="navbar-brand" href="landing-page.html">
+        <a class="navbar-brand" href="http://localhost:5500/homepage.html">
           <div class="ps-1">
             <img
               src="./assets/logo.png"
@@ -52,7 +52,7 @@
         >
           <ul class="navbar-nav">
             <li class="nav-item d-flex justify-content-end">
-              <a class="nav-link btn" href="homepage.html">Inicio</a>
+              <a class="nav-link btn"  href="http://localhost:5500/homepage.html">Inicio</a>
             </li>
             <li class="nav-item d-flex justify-content-end">
               <a class="nav-link btn" href="#">Contacto</a>
@@ -88,12 +88,17 @@
           <tr class="col-5">
             <th scope="col">Id</th>
             <th scope="col">Título</th>
+            <th scope="col">Categoría</th>
+            <th scope="col">Destacada</th>
+            <th scope="col">Recomendada</th>
+            <th scope="col">Descripcion</th>
             <th class="table-link-video" scope="col">video</th>
             <th class="table-link-image" scope="col">Imagen</th>
             <th scope="col">Opciones</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody class="table-body">
+
         </tbody>
       </table>
     </main>
@@ -107,13 +112,29 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            <form onsubmit="addMovie(event)">
+            <form onsubmit="addMovie()">
+
               <label for="name">Título</label>
               <input type="text" id="name" class="form-control" />
+
+              <label for="category">Categoría</label>
+              <input type="text" id="category" class="form-control" />
+
+              <label for="featured">Destacada</label>
+              <input type="text" id="featured" class="form-control" />
+
+              <label for="recomended">Recomendacion</label>
+              <input type="text" id="recomended" class="form-control" />
+
+              <label for="description">Descripcion</label>
+              <input type="text" id="description" class="form-control" />
+
               <label for="url-video">Link de video</label>
               <input type="text" id="url-video" class="form-control" />
+
               <label for="url-image">Link de imagen</label>
               <input type="text" id="url-image" class="form-control" />
+
               <button type="submit" class="btn btn-primary my-3">
                 Agregar Pelicula
               </button>
@@ -123,7 +144,44 @@
       </div>
     </div>
 
-    
+     <!-- MODAL EDITAR PELICULA -->
+  <div class="modal fade" id="edit-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Editar Pelicula</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form id="edit-form">
+
+            <label for="name-edit">Titulo</label>
+            <input type="text" id="name-edit" class="form-control">
+
+            <label for="category-edit">Categoria</label>
+            <input type="text" id="category-edit" class="form-control">
+
+            <label for="featured-edit">Destacada</label>
+            <input type="text" id="featured-edit" class="form-control">
+
+            <label for="recomended-edit">Recomendacion</label>
+            <input type="text" id="recomended-edit" class="form-control">
+
+            <label for="description-edit">Descripcion</label>
+            <input type="text" id="description-edit" class="form-control">
+
+            <label for="url-video-edit">Video</label>
+            <input type="text" id="url-video-edit" class="form-control">
+
+            <label for="url-image-edit">Imagen</label>
+            <input type="text" id="url-image-edit" class="form-control">
+            
+            <button type="submit" class="btn btn-primary my-3">Editar Pelicula</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
 <!-- NAHUEL:FOOTER -->
 <footer class="footer position-absolute bottom-0 w-100">
   <div>
