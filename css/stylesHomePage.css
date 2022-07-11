@@ -1,5 +1,5 @@
-*{
-  font-family: 'Karla', sans-serif;
+* {
+  font-family: "Karla", sans-serif;
 }
 body {
   background-image: url(/assets/bf-red-landing.jpg);
@@ -12,69 +12,80 @@ body {
 }
 
 .btn-play {
-  background-color: #2669cc;
+  background-color: rgba(143, 65, 65, 0.336);
   padding: 5px;
   padding-left: 10px;
   padding-right: 10px;
-  border: 1px solid black;
+  border: 1px solid rgb(143, 65, 65);
   border-radius: 10px;
 }
 
 .btn-play:hover {
-  background-color: black;
+  background-color: rgb(119, 55, 55);
   color: white;
-  border: 1px solid white;
+  border: 1px solid rgb(65, 44, 44);
 }
 
-#Comedia::-webkit-scrollbar{
-  height: 5px;
-  background-color: black;
+#Recomendadas::-webkit-scrollbar,
+#Comedia::-webkit-scrollbar,
+#Terror::-webkit-scrollbar,
+#Drama::-webkit-scrollbar {
+  height: 13px;
+  border-radius: 10px;
+  background-color: #221E22;
 }
 
-#Comedia::-webkit-scrollbar-thumb{
-background-color: blue;
-border-radius: 10px;
-border-right: 2px;
+#Recomendadas::-webkit-scrollbar-thumb,
+#Comedia::-webkit-scrollbar-thumb,
+#Terror::-webkit-scrollbar-thumb,
+#Drama::-webkit-scrollbar-thumb {
+  background-color: #FE4A49;
+  /* border: 0.5px solid #fe4949b6; */
+  box-shadow: -1px -6px 10px inset #C1CAD6;
+  border-radius: 10px;
+  border-right: 2px;
 }
 
-.lista-imagenes{
+.lista-imagenes {
   width: 90%;
   margin: 0px auto;
   padding: 0px; /*20px;*/
-  overflow: hidden;
+  /* overflow: hidden; */
   scroll-behavior: smooth;
+  overflow-x: scroll;
   position: relative;
-  /* overflow-x:; */
 }
 
-.movieImage{
-  width: 16.6%;
+
+.movieImage {
+  width: 16.6vw;
   height: 250px;
   object-fit: cover;
+  border-radius: 3px;
 }
 
-.buttonLeft{
+.buttonLeft {
   width: 25px;
   height: 25px;
   position: absolute;
   left: 0px;
   top: 43%;
 }
-.buttonRight{
+.buttonRight {
   width: 25px;
   height: 25px;
-  position: absolute;
-  right: 0px;
+  position: sticky;
+  right: 0;
   top: 43%;
 }
 
-.col-sm-2-4{
+.col-sm-2-4 {
   width: 19% !important;
   height: 250px;
   object-fit: cover;
 }
 
-.footer{
+.footer {
   position: absolute;
   bottom: 0;
   background-color: rgba(60.78, 60.78, 60.78, 0.2);
@@ -83,31 +94,48 @@ border-right: 2px;
   padding-top: 5px;
 }
 
-.footer, .socialm{
+.footer,
+.socialm {
   text-decoration: none;
   color: white;
 }
-.socialm:hover{
+.socialm:hover {
   color: white;
   cursor: pointer;
 }
-.navbar-color{
+.navbar-color {
   background-color: rgba(60.78, 60.78, 60.78, 0.2);
 }
 
-@media screen and (max-width: 670px) {
+@media screen and (max-width: 680px) {
   .mainImage {
     height: 45vh;
     object-fit: cover;
   }
-  .movieImage{
+  .movieImage {
     width: 20%;
   }
+
+  #Recomendadas::-webkit-scrollbar,
+#Comedia::-webkit-scrollbar,
+#Terror::-webkit-scrollbar,
+#Drama::-webkit-scrollbar {
+  height: 5px;
+  border-radius: 10px;
+  background-color: #221E22;
+}
 }
 
 @media screen and (max-width: 450px) {
-  .movieImage{
+  .mainImage {
+    height: 30vh;
+    object-fit: cover;
+  }
+  .movieImage {
     width: 45%;
   }
-}
 
+  .text-description{
+    font-size: 13px;
+  }
+}
