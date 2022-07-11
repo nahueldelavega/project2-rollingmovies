@@ -1,32 +1,32 @@
 * {
-    font-family: "Karla", sans-serif;
-  }
-  body {
-    background-image: url(/assets/bf-red-landing.jpg);
-    background-size: cover;
-  }
-  .footer {
-    background-color: rgba(60.78, 60.78, 60.78, 0.2);
-  }
-  .socialm {
-    text-decoration: none;
-    color: white;
-  }
-  .socialm:hover {
-    color: white;
-    cursor: pointer;
-  }
-  .navbar-color {
-    background-color: rgba(60.78, 60.78, 60.78, 0.2);
-  }
-  .navbar-text{
-    text-decoration: none;
-    color: black; 
-  }
-  .navbar-text:hover {
-    color: black;
-  }
-  .comments{
-    width: 50vw;
-    height: 20vh;
-  }
+  font-family: "Karla", sans-serif;
+}
+body {
+  background-image: url(/assets/bf-red-landing.jpg);
+  background-size: cover;
+}
+.footer {
+  background-color: rgba(60.78, 60.78, 60.78, 0.2);
+}
+.socialm {
+  text-decoration: none;
+  color: white;
+}
+.socialm:hover {
+  color: white;
+  cursor: pointer;
+}
+.navbar-color {
+  background-color: rgba(60.78, 60.78, 60.78, 0.2);
+}
+.navbar-text {
+  text-decoration: none;
+  color: black;
+}
+.navbar-text:hover {
+  color: black;
+}
+.comments {
+  width: 85vw !important;
+  height: 20vh;
+}
