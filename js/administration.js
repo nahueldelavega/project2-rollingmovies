@@ -1,167 +1,82 @@
-if (!localStorage.getItem("userLogged")) {
-  window.location.assign(window.location.origin);
-}
-class Movie {
-  constructor(id, name, categories, recomended, urlVideo, urlImage) {
-    this.id = id;
-    this.name = name;
-    this.categories = categories;
-    this.recomended = recomended;
-    this.urlVideo = urlVideo;
-    this.urlImage = urlImage;
-  }
+if (!localStorage.getItem('userLogged')){
+  window.location.assign(window.location.origin)
 }
 
-// let moviesBase = [
-//   new Movie(
-//     1,
-//     "Movie1",
-//     "Terror",
-//     "si",
-//     "https://www.youtube.com/watch?v=jYRtFFa4hT8",
-//     "https://images.unsplash.com/photo-1485846234645-a62644f84728?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1459&q=80"
-//   ),
-//   new Movie(
-//     2,
-//     "Movie2",
-//     "Drama",
-//     "si",
-//     "https://www.youtube.com/watch?v=jYRtFFa4hT8",
-//     "https://images.unsplash.com/photo-1440404653325-ab127d49abc1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
-//   ),
-//   new Movie(
-//     3,
-//     "Movie3",
-//     "Comedia",
-//     "no",
-//     "https://www.youtube.com/watch?v=jYRtFFa4hT8",
-//     "https://images.unsplash.com/photo-1534684686641-05569203ecca?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1632&q=80"
-//   ),
-//   new Movie(
-//     4,
-//     "Movie3",
-//     "Comedia",
-//     "si",
-//     "https://www.youtube.com/watch?v=jYRtFFa4hT8",
-//     "https://images.unsplash.com/photo-1534684686641-05569203ecca?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1632&q=80"
-//   ),
-//   new Movie(
-//     5,
-//     "Movie3",
-//     "Comedia",
-//     "si",
-//     "https://www.youtube.com/watch?v=jYRtFFa4hT8",
-//     "https://images.unsplash.com/photo-1534684686641-05569203ecca?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1632&q=80"
-//   ),
-//   new Movie(
-//     6,
-//     "Movie3",
-//     "Comedia",
-//     "si",
-//     "https://www.youtube.com/watch?v=jYRtFFa4hT8",
-//     "https://images.unsplash.com/photo-1534684686641-05569203ecca?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1632&q=80"
-//   ),
-//   new Movie(
-//     7,
-//     "Movie3",
-//     "Comedia",
-//     "si",
-//     "https://www.youtube.com/watch?v=jYRtFFa4hT8",
-//     "https://images.unsplash.com/photo-1534684686641-05569203ecca?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1632&q=80"
-//   ),
-//   new Movie(
-//     8,
-//     "Movie3",
-//     "Comedia",
-//     "si",
-//     "https://www.youtube.com/watch?v=jYRtFFa4hT8",
-//     "https://images.unsplash.com/photo-1534684686641-05569203ecca?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1632&q=80"
-//   ),
-//   new Movie(
-//     9,
-//     "Movie3",
-//     "Comedia",
-//     "no",
-//     "https://www.youtube.com/watch?v=jYRtFFa4hT8",
-//     "https://images.unsplash.com/photo-1534684686641-05569203ecca?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1632&q=80"
-//   ),
-//   new Movie(
-//     10,
-//     "Movie3",
-//     "Comedia",
-//     "si",
-//     "https://www.youtube.com/watch?v=jYRtFFa4hT8",
-//     "https://images.unsplash.com/photo-1534684686641-05569203ecca?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1632&q=80"
-//   ),
-//   new Movie(
-//     11,
-//     "Movie3",
-//     "Comedia",
-//     "no",
-//     "https://www.youtube.com/watch?v=jYRtFFa4hT8",
-//     "https://images.unsplash.com/photo-1534684686641-05569203ecca?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1632&q=80"
-//   ),
-// ];
-
-// localStorage.setItem("moviesBase", JSON.stringify(moviesFromLS));
 
 //! cRud
-let moviesFromLS = JSON.parse(localStorage.getItem("moviesBase"));
-console.log(moviesFromLS);
-moviesFromLS.forEach((movie) => {
-  let movieRow = document.createElement("tr");
-  // movieRow.classList.add('table-link-image','table-link-video');
-  movieRow.innerHTML = `
-    <th scope="row">${movie.id}</th>
-    <td>${movie.name}</td>
-    <td>${movie.categories}</td>
-    <td>${movie.recomended}</td>
-    <td><img class="table-link-video" src=${movie.urlVideo}></td>
-    <td><img class="table-link-image" src=${movie.urlImage}></td>
-    <td>
-    <button class="btn btn-secondary" onclick="deleteMovie(${movie.id})">:la_basura_en_su_lugar:</button>
-    <button class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#edit-modal" onclick="fillValues(${movie.id})">:bolígrafo_abajo_a_la_izquierda:</button>
-    </td>
-    `;
-  document.querySelector("tbody").appendChild(movieRow);
-});
-//! Crud
-function addMovie() {
-  // event.preventDefault();
-  const name = document.getElementById("name").value;
-  const video = document.getElementById("url-video").value;
-  const image = document.getElementById("url-image").value;
-  const category = document.getElementById("category").value;
-  const recomended = document.getElementById("recomended").value;
-  // console.log(name);
-  // console.log(video);
-  // console.log(image);
-  let moviesFromLS = JSON.parse(localStorage.getItem("moviesBase"));
-  const newMovie = new Movie(
-    moviesFromLS.length + 1,
-    name,
-    category,
-    recomended,
-    video,
-    image
-  );
-  moviesFromLS.push(newMovie);
-  localStorage.setItem("moviesBase", JSON.stringify(moviesFromLS));
-  // window.location.reload();
+let moviesBaseTabla = JSON.parse(localStorage.getItem('moviesBase'));
+moviesBaseTabla.forEach(movie=>{
+  let movieRow = document.createElement('tr');
+  movieRow.innerHTML=`
+  <th scope="row">${movie.id}</th>
+  <td>${movie.name}</td>
+  <td>${movie.categories}</td>
+  <td>${movie.featured}</td>
+  <td>${movie.recomended}</td>
+  <td><img class="table-link-video" src=${movie.urlVideo}></td>
+  <td><img class="table-link-image" src=${movie.urlImage}></td>
+  <td>
+  <button class="btn btn-secondary" onclick="deleteMovie(${movie.id})">🚮</button>
+  <button class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#edit-modal" onclick="editMovie(${movie.id})">🖊️</button>
+  </td>
+  `;
+  document.querySelector('.table-body').appendChild(movieRow);
+})
+
+  //! Crud
+  function addMovie(){
+    // event.preventDefault();
+    const name = document.getElementById('name').value;
+    const category = document.getElementById('category').value;
+    const featured = document.getElementById('featured').value;
+    const recomended = document.getElementById('recomended').value;
+    const description = document.getElementById('description').value;
+    const video = document.getElementById('url-video').value;
+    const image = document.getElementById('url-image').value;
+
+    let moviesBase = JSON.parse(localStorage.getItem("moviesBase"));
+    let newMovie = new Movie (moviesBase.length + 1,name,category,featured,recomended,description,video,image);
+    moviesBase.push(newMovie);
+    let moviesFromLSToJSON = JSON.stringify(moviesBase);
+    localStorage.setItem("moviesBase",moviesFromLSToJSON);
+    // window.location.reload();
+  }
+
+  //!cruD
+const deleteMovie = (id) => {
+  let movies = JSON.parse(localStorage.getItem('moviesBase'));
+  let moviesUpdated = movies.filter(movie=>movie.id !== id);
+  localStorage.setItem('moviesBase',JSON.stringify(moviesUpdated));
+  window.location.reload();
 }
 
-// IDENTIFICAMOS SI EL USUARIO ES ADMIN O NO
-let userId = localStorage.getItem("user");
-// console.log(userId);
-let users = JSON.parse(localStorage.getItem("users"));
-users = JSON.parse(localStorage.getItem("users"));
-// console.log(users);
-let userActive = users.find((user) => user.id == userId);
-// console.log(userActive);
-if (userActive.admin) {
-  let adminButton = document.createElement("li");
-  adminButton.classList.add("nav-item");
-  adminButton.innerHTML = `
-<a class="nav-link" href="http://127.0.0.1:5500/admin.html">Administración</a>`;
-  document.getElementById("options-header").appendChild(adminButton);
+//!crUd
+const editMovie = function(id){
+  let movies = JSON.parse(localStorage.getItem('moviesBase'));
+  let movieToEdit = movies.find(movie => movie.id == id);
+  // document.getElementById('id-edit').value = movieToEdit.id;
+  document.getElementById('name-edit').value = movieToEdit.name;
+  document.getElementById('category-edit').value = movieToEdit.categories;
+  document.getElementById('featured-edit').value = movieToEdit.featured;
+  document.getElementById('recomended-edit').value = movieToEdit.recomended;
+  document.getElementById('description-edit').value = movieToEdit.description;
+  document.getElementById('url-video-edit').value = movieToEdit.urlVideo;
+  document.getElementById('url-image-edit').value = movieToEdit.urlImage;
+  document.getElementById('edit-form').setAttribute('onsubmit',`editMovie2(${id})`);
+}
+
+const editMovie2 = (id) =>{
+  // let id = document.getElementById('id-edit').value;
+  let name = document.getElementById('name-edit').value;
+  let category = document.getElementById('category-edit').value;
+  let featured = document.getElementById('featured-edit').value;
+  let recomended = document.getElementById('recomended-edit').value;
+  let description = document.getElementById('description-edit').value;
+  let urlVideo = document.getElementById('url-video-edit').value;
+  let urlImage = document.getElementById('url-image-edit').value;
+  let movies = JSON.parse(localStorage.getItem('moviesBase'));
+  let moviesUpdated = movies.filter(movie=>movie.id !== id);
+  let movieUpdated = new Movie(id,name,category,featured,recomended,description,urlVideo,urlImage);
+  moviesUpdated.push(movieUpdated);
+  localStorage.setItem('moviesBase',JSON.stringify(moviesUpdated));
 }
