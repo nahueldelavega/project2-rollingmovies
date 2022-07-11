@@ -1,5 +1,5 @@
-if (!localStorage.getItem('userLogged')){
-    window.location.assign(window.location.origin)
+if (!localStorage.getItem("userLogged")) {
+  window.location.assign(window.location.origin);
 }
 
 class Movie {
@@ -137,19 +137,137 @@ class Movie {
     localStorage.setItem("moviesBase",JSON.stringify(moviesFromLS));
   }
 
+//* Creacion dinamica de destacadas
 
+let carouselDestacadas = document.getElementById("carouselDestacadas");
+let carouselInnerCreate = document.createElement("div");
+carouselInnerCreate.classList.add("carousel-inner");
+carouselInnerCreate.innerHTML = `<button class="carousel-control-prev" type="button" data-bs-target="#carouselDestacadas" data-bs-slide="prev">
+<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+<span class="visually-hidden">Previous</span>
+</button>
+<button class="carousel-control-next" type="button" data-bs-target="#carouselDestacadas" data-bs-slide="next">
+<span class="carousel-control-next-icon" aria-hidden="true"></span>
+<span class="visually-hidden">Next</span>
+</button>
+`;
+carouselDestacadas.appendChild(carouselInnerCreate);
+let carouselInner = document.querySelector(".carousel-inner");
 
-// // IDENTIFICAMOS SI EL USUARIO ES ADMIN O NO
-let userId = localStorage.getItem('user');
-console.log(userId);
-let usersFromLS = JSON.parse(localStorage.getItem('users'));
-console.log(usersFromLS);
-let userActive = usersFromLS.find(user=>user.id==userId);
-console.log(userActive);
-if(userActive.admin){
-let adminButton = document.createElement('li');
-adminButton.classList.add('nav-item');
-adminButton.innerHTML=`
-<a class="nav-link" href="./admin.html">Administración</a>`;
-document.getElementById('options-header').appendChild(adminButton)
+moviesFromLS.forEach((movie) => {
+  if (movie.featured === "si") {
+    let active = document.createElement("div");
+    active.classList.add("carousel-item");
+    active.innerHTML = `<div class="card text-white mt-0">
+  <!-- <img src="${movie.urlImage}" class="d-block w-100 mainImage" alt="..." /> -->
+  <iframe
+      src="${movie.urlVideo}"
+      title="YouTube video player"
+      frameborder="0"
+      allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen class = "w-100 mainImage"
+    ></iframe>
+  <div class="card-img-overlay d-flex  flex-column ">
+    <div class="my-auto overflow-auto d-flex flex-column align-items-start mb-0">
+      <h5 class="card-title">${movie.name}</h5>
+      <button type="button" class="btn-play my-3">Reproducir</button>
+      <p class="card-text fs-7 text-description">${movie.description}
+      </p>
+    </div>
+  </div>
+</div>`;
+    carouselInner.appendChild(active);
+    let carouselItem = document.querySelectorAll(".carousel-item");
+    carouselItem[0].classList.add("active");
+  }
+});
+
+//* Creación dinamica de categorías y películas
+
+let categories = ["Recomendadas", "Comedia", "Drama", "Terror"];
+// console.log(categories);
+
+let moviesCategories = document.getElementById("categories");
+console.log(moviesCategories);
+
+for (let i = 0; i < categories.length; i++) {
+  let catTitle = document.createElement("h3");
+  let carousel = document.createElement("div");
+  catTitle.innerHTML = categories[i];
+  catTitle.style.marginLeft = "20px";
+  carousel.id = categories[i];
+  carousel.innerHTML = `
+  <div class="d-flex carousel-${categories[i]}">
+  </div>
+  `;
+  carousel.classList.add(
+    "d-flex",
+    "align-items-center",
+    "lista-imagenes",
+    "mt-0"
+  );
+  catTitle.classList.add("color6", "commontexts", "mb-0");
+  moviesCategories.appendChild(catTitle);
+  moviesCategories.appendChild(carousel);
+}
+let pelicula = document.getElementById("Comedia").offsetWidth;
+
+let com = document.querySelector(".carousel-Comedia");
+let dra = document.querySelector(".carousel-Drama");
+let ter = document.querySelector(".carousel-Terror");
+let rec = document.querySelector(".carousel-Recomendadas");
+
+console.log(rec);
+
+//? Llenar de peliculas
+for (let j = 0; j < moviesFromLS.length; j++) {
+  console.log(moviesFromLS[j].recomended);
+  if (moviesFromLS[j].recomended === "si") {
+    let movieFilm = document.createElement("img");
+    movieFilm.classList.add("movieImage", "mx-2", "mb-2");
+    movieFilm.setAttribute("src", `${moviesFromLS[j].urlImage}`);
+
+    rec.appendChild(movieFilm);
+  }
+  if (moviesFromLS[j].categories === "Comedia") {
+    let movieFilm = document.createElement("img");
+    movieFilm.classList.add("movieImage", "mx-2", "mb-2");
+    movieFilm.setAttribute("src", `${moviesFromLS[j].urlImage}`);
+
+    com.appendChild(movieFilm);
+  }
+  if (moviesFromLS[j].categories === "Drama") {
+    let movieFilm = document.createElement("img");
+    movieFilm.classList.add("movieImage", "mx-2", "mb-2");
+    movieFilm.setAttribute("src", `${moviesFromLS[j].urlImage}`);
+
+    dra.appendChild(movieFilm);
+  }
+  if (moviesFromLS[j].categories === "Terror") {
+    let movieFilm = document.createElement("img");
+    movieFilm.classList.add("movieImage", "mx-2", "mb-2");
+    movieFilm.setAttribute("src", `${moviesFromLS[j].urlImage}`);
+
+    ter.appendChild(movieFilm);
+  }
+}
+
+let asd = document.querySelectorAll(".movieImage");
+console.log(asd);
+
+// IDENTIFICAMOS SI EL USUARIO ES ADMIN O NO
+let userId = localStorage.getItem("user");
+// console.log(userId);
+let users = JSON.parse(localStorage.getItem("users"));
+users = JSON.parse(localStorage.getItem("users"));
+// console.log(users);
+let userActive = users.find((user) => user.id == userId);
+// console.log(userActive);
+if (userActive.admin) {
+  let adminButton = document.createElement("li");
+  adminButton.classList.add("nav-item");
+  adminButton.innerHTML = `
+<a class="nav-link" href="/admin.html">Administración</a>`;
+adminButton.classList.add("d-flex", "justify-content-end")
+  document.getElementById("options-header").appendChild(adminButton);
 }
