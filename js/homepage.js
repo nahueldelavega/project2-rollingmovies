@@ -26,6 +26,7 @@ class Movie {
 
 let moviesBase;
 let moviesFromLS = JSON.parse(localStorage.getItem("moviesBase"));
+console.log("Array de movies",moviesFromLS)
 
 if (moviesFromLS) {
   moviesBase = moviesFromLS;
@@ -142,8 +143,11 @@ if (moviesFromLS) {
       "https://images.unsplash.com/photo-1534684686641-05569203ecca?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1632&q=80"
     ),
   ];
-  localStorage.setItem("moviesBase", JSON.stringify(moviesFromLS));
+  localStorage.setItem("moviesBase", JSON.stringify(moviesBase));
 }
+
+moviesFromLS = JSON.parse(localStorage.getItem("moviesBase"))
+console.log(moviesFromLS)
 
 //* Creacion dinamica de destacadas
 

@@ -26,6 +26,7 @@ moviesBaseTabla.forEach(movie=>{
   //! Crud
   function addMovie(){
     // event.preventDefault();
+    let idMovie = Math.floor(Math.random()*1000000)
     const name = document.getElementById('name').value;
     const category = document.getElementById('category').value;
     const featured = document.getElementById('featured').value;
@@ -35,7 +36,7 @@ moviesBaseTabla.forEach(movie=>{
     const image = document.getElementById('url-image').value;
 
     let moviesBase = JSON.parse(localStorage.getItem("moviesBase"));
-    let newMovie = new Movie (moviesBase.length + 1,name,category,featured,recomended,description,video,image);
+    let newMovie = new Movie (idMovie,name,category,featured,recomended,description,video,image);
     moviesBase.push(newMovie);
     let moviesFromLSToJSON = JSON.stringify(moviesBase);
     localStorage.setItem("moviesBase",moviesFromLSToJSON);
