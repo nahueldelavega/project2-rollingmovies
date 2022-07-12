@@ -7,6 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>RollingMovies, tu plataforma de streaming favorita</title>
   <link rel="shortcut icon" href="./assets/logo.png" type="image/x-icon">
+  <link rel="stylesheet" href="css/detail.css" type="text/css" />
   <link rel="stylesheet" href="css/stylesHomePage.css" type="text/css" />
   <!--* Agregado de Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -20,7 +21,7 @@
   <!--* Navbar-->
   <nav class="navbar navbar-expand-lg bg-transparent position-static top-0 p-0">
     <div class="container-fluid navbar-color p-1">
-      <a class="navbar-brand" href="landing-page.html">
+      <a class="navbar-brand" href="/homepage.html">
         <div class="ps-1">
           <img src="./assets/logo.png" alt="" width="30" height="24" class="d-inline-block align-text-top" />
           RollingMovies
@@ -33,13 +34,13 @@
       <div class="collapse navbar-collapse justify-content-end pe-5" id="navbarNav">
         <ul id="options-header" class="navbar-nav">
           <li class="nav-item d-flex justify-content-end">
-            <a class="nav-link btn" href="#">Inicio</a>
+            <a class="nav-link btn" href="/homepage.html">Inicio</a>
           </li>
           <li class="nav-item d-flex justify-content-end">
-            <a class="nav-link btn" href="#">Contacto</a>
+            <a class="nav-link btn" href="/error404.html">Contacto</a>
           </li>
           <li class="nav-item d-flex justify-content-end">
-            <a class="nav-link btn">Acerca de</a>
+            <a class="nav-link btn" href="/acercadenosotros.html">Acerca de</a>
           </li>
           <li class="nav-item d-flex justify-content-end">
             <a class="nav-link btn" href="./index.html" onclick="localStorage.removeItem('userLogged')">Cerrar
@@ -56,7 +57,7 @@
   </div>
 
 <!-- NAHUEL:FOOTER -->
-  <footer class="footer position-absolute bottom-0 w-100">
+  <footer class="footer position-static bottom-0 w-100">
     <div>
       <div class="">
         <ul class="d-flex justify-content-evenly">
