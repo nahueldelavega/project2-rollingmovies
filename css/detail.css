@@ -1,0 +1,33 @@
+.movieDetail {
+    width: 50%;
+}
+
+.videoDetail {
+    width: 50%;
+}
+
+#button{
+    border: 2px solid rgba(103, 103, 103, 0.2);
+    border-radius: 10px;
+    background-color: rgba(61, 61, 61, 0.729);
+    padding: 10px;
+    font-size: 25px;
+}
+
+#button:hover{
+    border: 2px solid rgba(103, 103, 103, 0.2);
+    border-radius: 10px;
+    background-color: rgba(130, 128, 128, 0.729);
+    padding: 10px;
+    font-size: 25px;
+}
+
+@media screen and (max-width: 450px) {
+    .movieDetail {
+        width: 90%;
+    }
+
+    .videoDetail {
+        width: 75%;
+    }
+}

@@ -6,3 +6,24 @@
     height: 40px;
     width: 40px;
 }
+
+.body{
+    margin: 0;
+    padding: auto;
+}
+
+
+
+.table-container{
+    overflow-x: auto;
+}
+
+.table-rwd{
+    min-width: 1024px;
+}
+
+/* .first-column{
+    position: absolute;
+    width: 8em;
+} */
+

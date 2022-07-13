@@ -50,16 +50,16 @@
           class="collapse navbar-collapse justify-content-end pe-5"
           id="navbarNav"
         >
-          <ul class="navbar-nav">
-            <li class="nav-item d-flex justify-content-end">
-              <a class="nav-link btn"  href="/homepage.html">Inicio</a>
-            </li>
-            <li class="nav-item d-flex justify-content-end">
-              <a class="nav-link btn" href="#">Contacto</a>
-            </li>
-            <li class="nav-item d-flex justify-content-end">
-              <a class="nav-link btn">Acerca de</a>
-            </li>
+        <ul id="options-header" class="navbar-nav">
+          <li class="nav-item d-flex justify-content-end">
+            <a class="nav-link btn" href="/homepage.html">Inicio</a>
+          </li>
+          <li class="nav-item d-flex justify-content-end">
+            <a class="nav-link btn" href="/error404.html">Contacto</a>
+          </li>
+          <li class="nav-item d-flex justify-content-end">
+            <a class="nav-link btn" href="/acercadenosotros.html">Acerca de</a>
+          </li>
             <li class="nav-item d-flex justify-content-end">
               <a
                 class="nav-link btn"
@@ -76,31 +76,34 @@
     <!--* FIN DEL NAVBAR  -->
 
     
-    <main class="container mt-5 bg-white p-3 rounded-4">
-      <button
+    <main>
+      <div class="table-responsive col-8-5 mt-5 bg-dark p-3 rounded-4">
+        <button
         class="btn btn-success mb-4"
         data-bs-toggle="modal"
         data-bs-target="#create-modal-add-movie">
         Agregar ➕ 
       </button>
-      <table class="table">
-        <thead class="thead-dark col-5">
-          <tr class="col-5">
-            <th scope="col">Id</th>
-            <th scope="col">Título</th>
-            <th scope="col">Categoría</th>
-            <th scope="col">Destacada</th>
-            <th scope="col">Recomendada</th>
-            <th scope="col">Descripcion</th>
-            <th class="table-link-video" scope="col">video</th>
-            <th class="table-link-image" scope="col">Imagen</th>
-            <th scope="col">Opciones</th>
-          </tr>
-        </thead>
-        <tbody class="table-body">
-
-        </tbody>
-      </table>
+      <div class="table-container">
+        <table class="table-rwd table-bordered table-dark table-striped">
+          <thead class="thead-dark text-center text-danger border-bottom border-danger col-5">
+            <tr class="col-5">
+              <th class="px-3" scope="col">#</th>
+              <th class="px-3 first-column" scope="col">Título</th>
+              <th class="px-3" scope="col">Categoría</th>
+              <th class="px-3" scope="col">Destacada</th>
+              <th class="px-3" scope="col">Recomendada</th>
+              <th class="px-3" scope="col">Descripción</th>
+              <th class="px-3 table-link-video" scope="col">Video</th>
+              <th class="px-3 table-link-image" scope="col">Imagen</th>
+              <th class="px-3" scope="col">Opciones</th>
+            </tr>
+          </thead>
+          <tbody class="table-body">
+          </tbody>
+        </table>
+      </div>
+      </div>
     </main>
 
     <!-- MODAL DE CREAR PELÍCULA -->
@@ -183,7 +186,7 @@
     </div>
   </div>
 <!-- NAHUEL:FOOTER -->
-<footer class="footer position-absolute bottom-0 w-100">
+<footer class="footer position-static bottom-0 w-100">
   <div>
     <div class="footer-list">
       <ul class="d-flex justify-content-center">
