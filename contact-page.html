@@ -74,7 +74,7 @@
     <!-- NAHUEL: FORM DE CONTACTO -->
     <div class="container d-flex justify-content-center pt-3"><h2>Hola, somos RollingMovies! Dejanos aquí tus comentarios. Queremos leerte!</h2></div>
     <div class="container d-flex justify-content-center mt-5" onsubmit="comments(event)">
-      <form class="row g-3 needs-validation" novalidate>
+      <form class="row g-3 needs-validation" action="https://formspree.io/f/{form_id}" method="post" novalidate>
         <div class="col-md-4">
           <label for="comment-name" class="form-label">Nombre</label>
           <input
