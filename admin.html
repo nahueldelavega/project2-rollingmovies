@@ -63,7 +63,7 @@
             <li class="nav-item d-flex justify-content-end">
               <a
                 class="nav-link btn"
-                href="./index.html"
+                href="/index.html"
                 onclick="localStorage.removeItem('userLogged')"
                 >Cerrar Sesión</a
               >
@@ -76,31 +76,36 @@
     <!--* FIN DEL NAVBAR  -->
 
     
-    <main class="container mt-5 bg-white p-3 rounded-4">
-      <button
-        class="btn btn-success mb-4"
+    <main>
+      <div class="m-5 bg-dark p-3 rounded-4">
+        <button
+        class="btn btn-success m-3 px-2"
         data-bs-toggle="modal"
         data-bs-target="#create-modal-add-movie">
         Agregar ➕ 
       </button>
-      <table class="table">
-        <thead class="thead-dark col-5">
-          <tr class="col-5">
-            <th scope="col">Id</th>
-            <th scope="col">Título</th>
-            <th scope="col">Categoría</th>
-            <th scope="col">Destacada</th>
-            <th scope="col">Recomendada</th>
-            <th scope="col">Descripcion</th>
-            <th class="table-link-video" scope="col">video</th>
-            <th class="table-link-image" scope="col">Imagen</th>
-            <th scope="col">Opciones</th>
-          </tr>
-        </thead>
-        <tbody class="table-body">
-
-        </tbody>
-      </table>
+      <div class="container-fluid">
+        <div class="table-responsive">
+          <table class="table table-hover table-bordered table-dark ">
+            <thead class="thead-dark text-center text-danger border-bottom border-danger">
+              <tr class="col px-2">
+                <th scope="col">#</th>
+                <th scope="col">Título</th>
+                <th scope="col">Categoría</th>
+                <th scope="col">Destacada</th>
+                <th scope="col">Recomendada</th>
+                <th scope="col">Descripción</th>
+                <th scope="col">Video</th>
+                <th scope="col">Imagen</th>
+                <th scope="col">Opciones</th>
+              </tr>
+            </thead>
+            <tbody class="table-body">
+            </tbody>
+          </table>
+        </div>
+      </div>
+      </div>
     </main>
 
     <!-- MODAL DE CREAR PELÍCULA -->
