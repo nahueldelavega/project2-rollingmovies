@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./css/styles-contact.css" />
     <link rel="shortcut icon" href="./assets/logo.png" type="image/x-icon" />
-    <script src="https://smtpjs.com/v3/smtp.js">
     </script>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
@@ -50,7 +49,7 @@
           <span class="navbar-toggler-icon"></span>
         </button>
         <div
-          class="collapse navbar-collapse justify-content-end pe-5"
+          class=" navbar-collapse justify-content-end pe-lg-5 "
           id="navbarNav"
         >
           <ul class="navbar-nav">
@@ -61,7 +60,7 @@
                 data-bs-toggle="modal"
                 data-bs-target="#login-modal"
               >
-                <a aria-current="page" href="/index.html" class="navbar-text"
+                <a aria-current="page" href="/homepage.html" class="navbar-text"
                   >Inicio</a
                 >
               </button>
@@ -74,10 +73,11 @@
     <!-- NAHUEL: FORM DE CONTACTO -->
     <div class="container d-flex justify-content-center pt-3"><h2>Hola, somos RollingMovies! Dejanos aquí tus comentarios. Queremos leerte!</h2></div>
     <div class="container d-flex justify-content-center mt-5" onsubmit="comments(event)">
-      <form class="row g-3 needs-validation" novalidate>
+      <form class="row g-3 needs-validation" action="https://formspree.io/f/xoqrozaz" method="post" novalidate>
         <div class="col-md-4">
           <label for="comment-name" class="form-label">Nombre</label>
           <input
+            name="name"
             type="text"
             class="form-control"
             id="comment-name"
@@ -88,6 +88,7 @@
         <div class="col-md-4">
           <label for="comment-lastname" class="form-label">Apellido</label>
           <input
+            name="lastname"
             type="text"
             class="form-control"
             id="comment-lastname"
@@ -99,6 +100,7 @@
           <label for="comment-email" class="form-label">Email</label>
           <div class="input-group has-validation">
             <input
+              name="email"
               type="email"
               class="form-control"
               id="comment-email"
@@ -110,6 +112,7 @@
         <div class="col-md-6">
           <label for="comment-comment" class="form-label">Comentario</label>
           <input
+            name="message"
             type="text"
             class="form-control comments p-0"
             id="comment-comment"
@@ -126,6 +129,5 @@
 
 
     <script src="/js/contact-page.js"></script>
-    <script src="./js/smtp.js"></script>
   </body>
 </html>
