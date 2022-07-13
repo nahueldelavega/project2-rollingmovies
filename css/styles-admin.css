@@ -1,29 +1,20 @@
-.table-link-image{
+/* .table-link-image{
     height: 40px;
     width: 40px;
 }
 .table-link-video{
     height: 40px;
     width: 40px;
-}
+} */
 
 .body{
     margin: 0;
     padding: auto;
 }
 
-
-
-.table-container{
-    overflow-x: auto;
+.edit-column{
+    width: 20px;
+    padding: 0;
 }
 
-.table-rwd{
-    min-width: 1024px;
-}
-
-/* .first-column{
-    position: absolute;
-    width: 8em;
-} */
 

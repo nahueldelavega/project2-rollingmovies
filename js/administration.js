@@ -7,17 +7,17 @@ if (!localStorage.getItem('userLogged')){
 let moviesBaseTabla = JSON.parse(localStorage.getItem('moviesBase'));
 moviesBaseTabla.forEach(movie=>{
   let movieRow = document.createElement('tr');
-  movieRow.classList.add('text-center','border')
+  movieRow.classList.add('border')
   movieRow.innerHTML=`
-  <th class="border first-column" scope="row">${movie.id}</th>
-  <td >${movie.name}</td>
-  <td >${movie.categories}</td>
-  <td >${movie.featured}</td>
-  <td >${movie.recomended}</td>
-  <td class="fs-6 fst-italic py-3">${movie.description}</td>
-  <td class="px-5"><img class="table-link-video" src=${movie.urlVideo}></td>
-  <td class="px-3"><img class="table-link-image" src=${movie.urlImage}></td>
-  <td class="px-3">
+  <th scope="row">${movie.id}</th>
+  <td class="text-center">${movie.name}</td>
+  <td class="text-center">${movie.categories}</td>
+  <td class="text-center">${movie.featured}</td>
+  <td class="text-center">${movie.recomended}</td>
+  <td class="fs-6 fst-italic">${movie.description}</td>
+  <td class="text-center fs-6 fst-italic">${movie.urlVideo}</td>
+  <td class="fs-6 fst-italic">${movie.urlImage}</td>
+  <td>
   <button class="btn btn-secondary mb-2" onclick="deleteMovie(${movie.id})">🚮</button>
   <button class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#edit-modal" onclick="editMovie(${movie.id})">🖊️</button>
   </td>
