@@ -63,7 +63,7 @@
             <li class="nav-item d-flex justify-content-end">
               <a
                 class="nav-link btn"
-                href="./index.html"
+                href="/index.html"
                 onclick="localStorage.removeItem('userLogged')"
                 >Cerrar Sesión</a
               >
@@ -76,31 +76,36 @@
     <!--* FIN DEL NAVBAR  -->
 
     
-    <main class="container mt-5 bg-white p-3 rounded-4">
-      <button
-        class="btn btn-success mb-4"
+    <main>
+      <div class="m-5 bg-dark p-3 rounded-4">
+        <button
+        class="btn btn-success m-3 px-2"
         data-bs-toggle="modal"
         data-bs-target="#create-modal-add-movie">
         Agregar ➕ 
       </button>
-      <table class="table">
-        <thead class="thead-dark col-5">
-          <tr class="col-5">
-            <th scope="col">Id</th>
-            <th scope="col">Título</th>
-            <th scope="col">Categoría</th>
-            <th scope="col">Destacada</th>
-            <th scope="col">Recomendada</th>
-            <th scope="col">Descripcion</th>
-            <th class="table-link-video" scope="col">video</th>
-            <th class="table-link-image" scope="col">Imagen</th>
-            <th scope="col">Opciones</th>
-          </tr>
-        </thead>
-        <tbody class="table-body">
-
-        </tbody>
-      </table>
+      <div class="container-fluid">
+        <div class="table-responsive">
+          <table class="table table-hover table-bordered table-dark ">
+            <thead class="thead-dark text-center text-danger border-bottom border-danger">
+              <tr class="col px-2">
+                <th scope="col">#</th>
+                <th scope="col">Título</th>
+                <th scope="col">Categoría</th>
+                <th scope="col">Destacada</th>
+                <th scope="col">Recomendada</th>
+                <th scope="col">Descripción</th>
+                <th scope="col">Video</th>
+                <th scope="col">Imagen</th>
+                <th scope="col">Opciones</th>
+              </tr>
+            </thead>
+            <tbody class="table-body">
+            </tbody>
+          </table>
+        </div>
+      </div>
+      </div>
     </main>
 
     <!-- MODAL DE CREAR PELÍCULA -->
@@ -185,23 +190,21 @@
 <!-- NAHUEL:FOOTER -->
 <footer class="footer position-static bottom-0 w-100">
   <div>
-    <div class="footer-list">
-      <ul class="d-flex justify-content-center">
-        <a class="socialm pe-2" href="/acercadenosotros.html">Nosotros</a>
-        <a class="socialm pe-2" href="/error404.html">Contacto</a>
-        <a class="socialm" href="/error404.html">Ayuda</a>
-      </ul>
-    </div>
-    <div class="footer-list">
-      <ul class="d-flex justify-content-center">
-        <a class="socialm pe-2" href="/error404.html">Instagram</a>
-        <a class="socialm pe-2" href="/error404.html">Facebook</a>
-        <a class="socialm" href="/error404.html">Twitter</a>
+    <div class="">
+      <ul class="d-flex justify-content-evenly">
+        <a class="socialm">Nosotros</a>
+        <a class="socialm">Contacto</a>
+        <a class="socialm">Ayuda</a>
       </ul>
     </div>
     <div class="">
-    <h6 class="d-flex justify-content-center">&copy; Copyright 2022. Todos los derechos reservados</h7>
+      <ul class="d-flex justify-content-evenly">
+        <a class="socialm">Instagram</a>
+        <a class="socialm">Facebook</a>
+        <a class="socialm">Twitter</a>
+      </ul>
     </div>
+    <h6 class="d-flex justify-content-center">&copy; Copyright 2022. Todos los derechos reservados</h7>
   </div>
 </footer>
     <!--* Agregado de Bootstrap -->
