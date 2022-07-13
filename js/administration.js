@@ -14,12 +14,12 @@ moviesBaseTabla.forEach(movie=>{
   <td class="text-center">${movie.categories}</td>
   <td class="text-center">${movie.featured}</td>
   <td class="text-center">${movie.recomended}</td>
-  <td class="fs-6 fst-italic">${movie.description}</td>
-  <td class="text-center fs-6 fst-italic">${movie.urlVideo}</td>
+  <td class="text-center fs-6 fst-italic">${movie.description}</td>
+  <td class="fs-6 fst-italic">${movie.urlVideo}</td>
   <td class="fs-6 fst-italic">${movie.urlImage}</td>
-  <td>
-  <button class="btn btn-secondary mb-2" onclick="deleteMovie(${movie.id})">🚮</button>
-  <button class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#edit-modal" onclick="editMovie(${movie.id})">🖊️</button>
+  <td class="text-center mt-2">
+  <button class="btn mb-2" onclick="deleteMovie(${movie.id})"><img src="https://cdn-icons-png.flaticon.com/512/1828/1828843.png" height ="40" width="40" /></button>
+  <button class="btn" data-bs-toggle="modal" data-bs-target="#edit-modal" onclick="editMovie(${movie.id})"><img src="https://cdn-icons.flaticon.com/png/512/6051/premium/6051882.png?token=exp=1657748128~hmac=13432ba8c8b7d503ae2fdbda6d5bbb06" height ="40" width="40" /></button>
   </td>
   `;
   document.querySelector('.table-body').appendChild(movieRow);
