@@ -1,11 +1,11 @@
 //!  Traemos el hash y el id con la propiedad location.hash, y despues le cortamos el hash con el slice porque no nos sirve. Nos queda como resultado el id del producto
-let idMovie = window.location.hash.slice(1); 
-console.log("Soy el idMovie", idMovie)
+let idMovie = window.location.hash.slice(1);
+console.log("Soy el idMovie", idMovie);
 //! Traigo las peliculas de LS
-let moviesBase = JSON.parse(localStorage.getItem("moviesBase"))
+let moviesBase = JSON.parse(localStorage.getItem("moviesBase"));
 //! Con el id, lo busco
-let moviet = moviesBase.find(movie=>movie.id == idMovie);
-console.log(moviet)
+let moviet = moviesBase.find((movie) => movie.id == idMovie);
+console.log(moviet);
 //! Novela de creacion de elemento, decirle que lleva adentro y llamar al padre para que lo adopte
 // let detail = document.createElement('div');
 // detail.innerHTML = `
@@ -15,48 +15,72 @@ console.log(moviet)
 // `
 // document.getElementById('detail-container').appendChild(detail);
 
-let movie = document.getElementById("movie")
-console.log(movie)
+let movie = document.getElementById("movie");
+console.log(movie);
 
+console.log(moviesBase);
 
-console.log(moviesBase)
+function completeMovie() {
+  let title = document.createElement("h1");
+  title.classList.add("d-flex", "justify-content-center", "my-3", "text-white");
+  title.innerHTML = `${moviesBase[idMovie - 1].name}`;
 
-function completeMovie(){
-    let title = document.createElement('h1');
-    title.classList.add("d-flex","justify-content-center", "my-3", "text-white")
-    title.innerHTML = `${moviesBase[idMovie-1].name}`
-    
-    let cover = document.createElement('img');
-    cover.classList.add("d-flex","justify-content-center","m-auto", "rounded-2", "movieDetail")
-    cover.setAttribute("src", `${moviesBase[idMovie-1].urlImage}`)
+  let cover = document.createElement("img");
+  cover.classList.add(
+    "d-flex",
+    "justify-content-center",
+    "m-auto",
+    "rounded-2",
+    "movieDetail",
+    "mb-3"
+  );
+  cover.setAttribute("src", `${moviesBase[idMovie - 1].urlImage}`);
 
-    let video = document.createElement('video')
-    video.classList.add("videoDetail", "d-flex","justify-content-center","m-auto")
-    video.setAttribute("src", `${moviesBase[idMovie-1].urlVideo}`)
+  let video = document.createElement("div");
+  video.classList.add(
+    "videoDetail",
+    "d-flex",
+    "justify-content-center",
+    "m-auto"
+  );
+  video.innerHTML = `<iframe src="${moviesBase[idMovie - 1].urlVideo}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
 
-    let descriptionTitle = document.createElement('h2')
-    descriptionTitle.classList.add("d-flex","justify-content-center", "my-3", "text-white")
-    descriptionTitle.innerHTML = `Descripción`
-    
-    let description = document.createElement("p")
-    description.classList.add("videoDetail", "d-flex","justify-content-center","m-auto","mb-5", "fs-6", "text-white")
-    description.innerHTML= `${moviesBase[idMovie-1].description}`
+  let descriptionTitle = document.createElement("h2");
+  descriptionTitle.classList.add(
+    "d-flex",
+    "justify-content-center",
+    "my-3",
+    "text-white"
+  );
+  descriptionTitle.innerHTML = `Descripción`;
 
-    let button = document.createElement("form")
-    button.classList.add("d-flex","justify-content-center","m-auto", "my-3")
-    button.setAttribute("action","/error404.html")
-    button.innerHTML=`
-    <button id="button" class"text-white" type="submit">Reproducir</button>`
+  let description = document.createElement("p");
+  description.classList.add(
+    "d-flex",
+    "justify-content-center",
+    "text-center",
+    "m-auto",
+    "mb-5",
+    "fs-6",
+    "text-white"
+  );
+  description.innerHTML = `${moviesBase[idMovie - 1].description}`;
 
-    movie.appendChild(title)
-    movie.appendChild(cover)
-    movie.appendChild(video)
-    movie.appendChild(descriptionTitle)
-    movie.appendChild(description)
-    movie.appendChild(button)
+  let button = document.createElement("form");
+  button.classList.add("d-flex", "justify-content-center", "m-auto", "my-3");
+  button.setAttribute("action", "/error404.html");
+  button.innerHTML = `
+    <button id="button" class"text-white" type="submit">Reproducir</button>`;
+
+  movie.appendChild(title);
+  movie.appendChild(cover);
+  movie.appendChild(video);
+  movie.appendChild(descriptionTitle);
+  movie.appendChild(description);
+  movie.appendChild(button);
 }
 
-completeMovie()
+completeMovie();
 
 // IDENTIFICAMOS SI EL USUARIO ES ADMIN O NO
 let userId = localStorage.getItem("user");
