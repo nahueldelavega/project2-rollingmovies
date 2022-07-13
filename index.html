@@ -102,15 +102,15 @@
           <div class="modal-body">
             <form id="register-form-1" onsubmit="register(event)" method="POST">
               <label for="register-name">Nombre</label>
-              <input class="form-control" type="text" id="register-name" required maxlength="35" minlength="4" />
+              <input class="form-control" type="text" id="register-name" required maxlength="35" minlength="3" />
               <label for="register-lastname">Apellido</label>
-              <input class="form-control" type="text" id="register-lastname" required maxlength="35" minlength="4" />
+              <input class="form-control" type="text" id="register-lastname" required maxlength="35" minlength="3" />
               <label for="register-email">Email</label>
-              <input class="form-control" type="email" id="register-email" required maxlength="35" minlength="4"/>
+              <input class="form-control" type="email" id="register-email" required maxlength="50" />
               <label for="register-pass">Contraseña</label>
               <input class="form-control" type="password" id="register-password" required maxlength="16" minlength="8" placeholder="Al menos 8 caracteres, una mayúscula y un número."/>
               <label for="register-pass2">Confirmar contraseña</label>
-              <input class="form-control" type="password" id="register-password-confirm" required maxlength="16" minlength="8"/>
+              <input class="form-control" type="password" id="register-password-confirm" required maxlength="16" minlength="8"placeholder="Repetir contraseña."/>
               <div class="my-3">
                 <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Cerrar</button>
                 <button type="submit" class="btn btn-dark">Registrarse</button>
