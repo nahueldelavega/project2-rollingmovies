@@ -7,13 +7,6 @@ let moviesBase = JSON.parse(localStorage.getItem("moviesBase"));
 let moviet = moviesBase.find((movie) => movie.id == idMovie);
 console.log(moviet);
 //! Novela de creacion de elemento, decirle que lleva adentro y llamar al padre para que lo adopte
-// let detail = document.createElement('div');
-// detail.innerHTML = `
-// <img class="detail-image" src=${product.image}>
-// <h1 class="text-center">${product.name}</h1>
-// <p class="h3 text-center text-secondary">${product.price}</p>
-// `
-// document.getElementById('detail-container').appendChild(detail);
 
 let movie = document.getElementById("movie");
 console.log(movie);
@@ -22,7 +15,7 @@ console.log(moviesBase);
 
 function completeMovie() {
   let title = document.createElement("h1");
-  title.classList.add("d-flex", "justify-content-center", "my-3", "text-white");
+  title.classList.add("d-flex", "justify-content-center", "my-3", "text-black");
   title.innerHTML = `${moviesBase[idMovie - 1].name}`;
 
   let cover = document.createElement("img");
@@ -43,14 +36,14 @@ function completeMovie() {
     "justify-content-center",
     "m-auto"
   );
-  video.innerHTML = `<iframe src="${moviesBase[idMovie - 1].urlVideo}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+  video.innerHTML = `<iframe class="embed-responsive-item" src="${moviesBase[idMovie - 1].urlVideo}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
 
   let descriptionTitle = document.createElement("h2");
   descriptionTitle.classList.add(
     "d-flex",
     "justify-content-center",
     "my-3",
-    "text-white"
+    "text-black"
   );
   descriptionTitle.innerHTML = `Descripción`;
 
@@ -62,7 +55,7 @@ function completeMovie() {
     "m-auto",
     "mb-5",
     "fs-6",
-    "text-white"
+    "text-black"
   );
   description.innerHTML = `${moviesBase[idMovie - 1].description}`;
 
